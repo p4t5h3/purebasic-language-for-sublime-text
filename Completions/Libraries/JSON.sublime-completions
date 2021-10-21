@@ -1,0 +1,355 @@
+{
+  "scope"      : "source.purebasic",
+  "completions": [
+      {
+        "details" : "Set a JSON value to contain a quad",
+        "contents": "SetJSONQuad(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "SetJSONQuad"
+      },
+      {
+        "details" : "Insert the specified array data into the JSON value",
+        "contents": "InsertJSONArray(${1:*JSONValue}, ${2:Array()})$3",
+        "kind"    : "function",
+        "trigger" : "InsertJSONArray"
+      },
+      {
+        "details"   : "Return the JSON value as an integer",
+        "contents"  : "GetJSONInteger(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "GetJSONInteger"
+      },
+      {
+        "details"   : "Return the JSON value as a float",
+        "contents"  : "GetJSONFloat(${1:*JSONValue})$2",
+        "annotation": "Float",
+        "kind"      : "function",
+        "trigger"   : "GetJSONFloat"
+      },
+      {
+        "details"   : "Get the key of the current examined member in the JSON object",
+        "contents"  : "JSONMemberKey(${1:*JSONValue})$2",
+        "annotation": "String",
+        "kind"      : "function",
+        "trigger"   : "JSONMemberKey"
+      },
+      {
+        "details" : "Extract a JSON value into the specified List",
+        "contents": "ExtractJSONList(${1:*JSONValue}, ${2:List()})$3",
+        "kind"    : "function",
+        "trigger" : "ExtractJSONList"
+      },
+      {
+        "details"   : "Get the next member in the examined JSON object",
+        "contents"  : "NextJSONMember(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "NextJSONMember"
+      },
+      {
+        "details"   : "Get the input line of the most recent JSON parsing error",
+        "contents"  : "JSONErrorLine()$1",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "JSONErrorLine"
+      },
+      {
+        "details"   : "Parse JSON data from a string",
+        "contents"  : "ParseJSON(${1:#JSON})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "ParseJSON"
+      },
+      {
+        "details"   : "Return the main value of JSON data",
+        "contents"  : "JSONValue(${1:#JSON})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "JSONValue"
+      },
+      {
+        "details" : "Extract a JSON value into the specified structure",
+        "contents": "ExtractJSONStructure(${1:*JSONValue}, ${2:*Buffer})$3",
+        "kind"    : "function",
+        "trigger" : "ExtractJSONStructure"
+      },
+      {
+        "details"   : "Load JSON data from a file",
+        "contents"  : "LoadJSON(${1:#JSON})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "LoadJSON"
+      },
+      {
+        "details"   : "Return an element in a JSON array",
+        "contents"  : "GetJSONElement(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "GetJSONElement"
+      },
+      {
+        "details" : "Set a JSON value to contain a boolean",
+        "contents": "SetJSONBoolean(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "SetJSONBoolean"
+      },
+      {
+        "details"   : "Return a member of a JSON object",
+        "contents"  : "GetJSONMember(${1:*JSONValue})$2",
+        "annotation": "Pointer",
+        "kind"      : "function",
+        "trigger"   : "GetJSONMember"
+      },
+      {
+        "details"   : "Examine the members of a JSON object",
+        "contents"  : "ExamineJSONMembers(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "ExamineJSONMembers"
+      },
+      {
+        "details"   : "Set a JSON value to contain an (empty) array",
+        "contents"  : "SetJSONArray(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "SetJSONArray"
+      },
+      {
+        "details"   : "Get the value of the current examined member in the JSON object",
+        "contents"  : "JSONMemberValue(${1:*JSONValue})$2",
+        "annotation": "Pointer",
+        "kind"      : "function",
+        "trigger"   : "JSONMemberValue"
+      },
+      {
+        "details"   : "Return the JSON value as a string",
+        "contents"  : "GetJSONString(${1:*JSONValue})$2",
+        "annotation": "String",
+        "kind"      : "function",
+        "trigger"   : "GetJSONString"
+      },
+      {
+        "details"   : "Return the JSON value as a double",
+        "contents"  : "GetJSONDouble(${1:*JSONValue})$2",
+        "annotation": "Double",
+        "kind"      : "function",
+        "trigger"   : "GetJSONDouble"
+      },
+      {
+        "details"   : "Add an element to a JSON array",
+        "contents"  : "AddJSONElement(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "AddJSONElement"
+      },
+      {
+        "details"   : "Get the input position of the most recent JSON parsing error",
+        "contents"  : "JSONErrorPosition()$1",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "JSONErrorPosition"
+      },
+      {
+        "details"   : "Return the JSON value as a boolean",
+        "contents"  : "GetJSONBoolean(${1:*JSONValue})$2",
+        "annotation": "Boolean",
+        "kind"      : "function",
+        "trigger"   : "GetJSONBoolean"
+      },
+      {
+        "details" : "Resize a JSON array",
+        "contents": "ResizeJSONElements(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "ResizeJSONElements"
+      },
+      {
+        "details"   : "Return the number of members in a JSON object",
+        "contents"  : "JSONObjectSize(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "JSONObjectSize"
+      },
+      {
+        "details"   : "Get a string description of the most recent JSON parsing error",
+        "contents"  : "JSONErrorMessage()$1",
+        "annotation": "String",
+        "kind"      : "function",
+        "trigger"   : "JSONErrorMessage"
+      },
+      {
+        "details"   : "Return the type of a JSON value",
+        "contents"  : "JSONType(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "JSONType"
+      },
+      {
+        "details"   : "Export JSON data to a memory buffer",
+        "contents"  : "ExportJSON(${1:#JSON}, ${2:*Buffer})$3",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "ExportJSON"
+      },
+      {
+        "details" : "Remove an element from a JSON array",
+        "contents": "RemoveJSONElement(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "RemoveJSONElement"
+      },
+      {
+        "details" : "Remove a member from a JSON object",
+        "contents": "RemoveJSONMember(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "RemoveJSONMember"
+      },
+      {
+        "details"   : "Create new JSON data with a value of type #PB_JSON_Null",
+        "contents"  : "CreateJSON(${1:#JSON})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "CreateJSON"
+      },
+      {
+        "details"   : "Add a member to a JSON object",
+        "contents"  : "AddJSONMember(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "AddJSONMember"
+      },
+      {
+        "details" : "Set a JSON value to contain an integer",
+        "contents": "SetJSONInteger(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "SetJSONInteger"
+      },
+      {
+        "details" : "Insert the specified structure data into the JSON value",
+        "contents": "InsertJSONStructure(${1:*JSONValue}, ${2:*Buffer})$3",
+        "kind"    : "function",
+        "trigger" : "InsertJSONStructure"
+      },
+      {
+        "details" : "Set a JSON value to contain a string",
+        "contents": "SetJSONString(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "SetJSONString"
+      },
+      {
+        "details" : "Set a JSON value to contain a float",
+        "contents": "SetJSONFloat(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "SetJSONFloat"
+      },
+      {
+        "details"   : "Return the number elements in a JSON array",
+        "contents"  : "JSONArraySize(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "JSONArraySize"
+      },
+      {
+        "details" : "Set a JSON value to contain a null",
+        "contents": "SetJSONNull(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "SetJSONNull"
+      },
+      {
+        "details" : "Clear the elements of a JSON array",
+        "contents": "ClearJSONElements(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "ClearJSONElements"
+      },
+      {
+        "details" : "Set a JSON value to contain a double",
+        "contents": "SetJSONDouble(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "SetJSONDouble"
+      },
+      {
+        "details"   : "Check if #JSON represents valid JSON data",
+        "contents"  : "IsJSON(${1:#JSON})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "IsJSON"
+      },
+      {
+        "details"   : "Set a JSON value to contain an (empty) object",
+        "contents"  : "SetJSONObject(${1:*JSONValue})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "SetJSONObject"
+      },
+      {
+        "details"   : "Save JSON data to a file",
+        "contents"  : "SaveJSON(${1:#JSON})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "SaveJSON"
+      },
+      {
+        "details"   : "Parse JSON from a memory buffer",
+        "contents"  : "CatchJSON(${1:#JSON}, ${2:*Buffer})$3",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "CatchJSON"
+      },
+      {
+        "details" : "Insert the specified list data into the JSON value",
+        "contents": "InsertJSONList(${1:*JSONValue}, ${2:List()})$3",
+        "kind"    : "function",
+        "trigger" : "InsertJSONList"
+      },
+      {
+        "details" : "Free JSON data",
+        "contents": "FreeJSON(${1:#JSON})$2",
+        "kind"    : "function",
+        "trigger" : "FreeJSON"
+      },
+      {
+        "details" : "Extract a JSON value into the specified map",
+        "contents": "ExtractJSONMap(${1:*JSONValue}, ${2:Map()})$3",
+        "kind"    : "function",
+        "trigger" : "ExtractJSONMap"
+      },
+      {
+        "details" : "Extract a JSON value into the specified array",
+        "contents": "ExtractJSONArray(${1:*JSONValue}, ${2:Array()})$3",
+        "kind"    : "function",
+        "trigger" : "ExtractJSONArray"
+      },
+      {
+        "details"   : "Compose a JSON data into a string",
+        "contents"  : "ComposeJSON(${1:#JSON})$2",
+        "annotation": "String",
+        "kind"      : "function",
+        "trigger"   : "ComposeJSON"
+      },
+      {
+        "details"   : "Return the JSON value as an quad",
+        "contents"  : "GetJSONQuad(${1:*JSONValue})$2",
+        "annotation": "Quad",
+        "kind"      : "function",
+        "trigger"   : "GetJSONQuad"
+      },
+      {
+        "details" : "Insert the specified map data into the JSON value",
+        "contents": "InsertJSONMap(${1:*JSONValue}, ${2:Map()})$3",
+        "kind"    : "function",
+        "trigger" : "InsertJSONMap"
+      },
+      {
+        "details"   : "Get the size that JSON data needs for the ExportJSON() function",
+        "contents"  : "ExportJSONSize(${1:#JSON})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "ExportJSONSize"
+      },
+      {
+        "details" : "Clear the members of a JSON object",
+        "contents": "ClearJSONMembers(${1:*JSONValue})$2",
+        "kind"    : "function",
+        "trigger" : "ClearJSONMembers"
+      }
+    ]
+}
