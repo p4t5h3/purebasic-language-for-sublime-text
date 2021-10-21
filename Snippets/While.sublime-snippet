@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>Wh</tabTrigger>
+    <content><![CDATA[While $1
+    $0
+Wend]]></content>
+    <description>while loop</description>
+</snippet>
