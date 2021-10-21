@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>pro</tabTrigger>
+    <content><![CDATA[Procedure$1 ${2:ProcedureName}($3)
+    $0
+EndProcedure]]></content>
+    <description>A procedure implementation</description>
+</snippet>
