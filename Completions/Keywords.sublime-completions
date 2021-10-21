@@ -55,7 +55,7 @@
         "Protected",
         "Repeat",
         "Select",
-        "Static"
+        "Static",
         "Structure",
         "To",
         "Until",
@@ -64,6 +64,6 @@
         "Wend",
         "While",
         "XIncludeFile",
-        "XOr",
+        "XOr"
     ]
 }
