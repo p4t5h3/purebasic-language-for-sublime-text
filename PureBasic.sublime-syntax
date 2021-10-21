@@ -37,8 +37,13 @@ contexts:
     - match: '\b(Global|Protected|Static)\b'
       scope: storage.modifier.purebasic
 
+      # Constants defined by PureBasic. This needs to be expanded. Just a stub for now.
+    - match: '#(True|False)\b'
+      scope: support.constant.purebasic
+
+      # Constants defined by the user.
     - match: '#([\w_]+)\b'
-      scope: constant.language.purebasic
+      scope: variable.other.constant.purebasic
 
     - match: '\b(-)?[0-9.]+\b'
       scope: constant.numeric.purebasic
