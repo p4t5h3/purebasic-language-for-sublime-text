@@ -1,0 +1,55 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/syntax.html
+file_extensions:
+  - pb
+  - pbi
+scope: source.purebasic
+contexts:
+  main:
+    - match: '"'
+      scope: punctuation.definition.string.begin.purebasic
+      push: double_quoted_string
+
+    - match: ';'
+      scope: punctuation.definition.comment.purebasic
+      push: line_comment
+
+    - match: '\b(Break|Case|Continue|Default|Else|End|EndIf|EndSelect|ElseIf|Else|For|ForEach|ForEver|If|Next|Repeat|Select|To|Until|Wend|While)\b'
+      scope: keyword.control.purebasic
+
+    - match: '\b(And|Not|Or|XOr)\b'
+      scope: keyword.logical.purebasic
+
+    - match: '(<|>|<>|<=|>=)'
+      scope: keyword.comparison.purebasic
+
+    - match: '='
+      scope: keyword.assignment.purebasic
+
+    - match: '\b(Debug|Declare|EnableASM|EnableExplicit|NewList|Enumeration|EndEnumeration|Procedure|ProcedureDLL|ProcedureReturn|EndProcedure|Macro|EndMacro|DataSection|EndDataSection|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|UseModule|UnuseModule)\b'
+      scope: keyword.other.purebasic
+
+      # Compiler keywords
+    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect)\b'
+      scope: keyword.other.purebasic
+
+    - match: '\b(Global|Protected|Static)\b'
+      scope: storage.modifier.purebasic
+
+    - match: '#([\w_]+)\b'
+      scope: constant.language.purebasic
+
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.purebasic
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.purebasic
+    - match: '"'
+      scope: punctuation.definition.string.end.purebasic
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.purebasic
+    - match: $
+      pop: true

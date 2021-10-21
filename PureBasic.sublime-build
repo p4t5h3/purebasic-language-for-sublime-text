@@ -1,0 +1,4 @@
+{
+    "cmd": ["pbcompiler", "$file"],
+    "selector": "source.purebasic"
+}
