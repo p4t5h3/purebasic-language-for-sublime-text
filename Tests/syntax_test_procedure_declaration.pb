@@ -9,7 +9,7 @@ ProcedureDLL Minimum()
 ;                    ^ punctuation.section.parens.end.purebasic
 EndProcedure
 
-Procedure.s GetUserName(*User.UserStructure, Capitalize = #False)
+Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ; <- keyword.declaration.function.purebasic
 ;^^^^^^^^ keyword.declaration.function.purebasic
 ;^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function.declaration.purebasic
@@ -23,9 +23,12 @@ Procedure.s GetUserName(*User.UserStructure, Capitalize = #False)
 ;                             ^^^^^^^^^^^^^ storage.type.struct
 ;                                          ^ punctuation.separator.purebasic
 ;                                            ^^^^^^^^^^ variable.parameter.purebasic
-;                                                       ^ keyword.operator.assignment.purebasic
-;                                                         ^^^^^^ support.constant.purebasic
-;                                                               ^ punctuation.section.parens.end.purebasic
+;                                                      ^ punctuation.separator.purebasic
+;                                                       ^ storage.type.bool
+;                                                         ^ keyword.operator.assignment.purebasic
+;                                                           ^ punctuation.definition.variable.purebasic
+;                                                           ^^^^^^ support.constant.purebasic
+;                                                                 ^ punctuation.section.parens.end.purebasic
     
 ; <- meta.function.purebasic
     ProcedureReturn "Anonymous"
