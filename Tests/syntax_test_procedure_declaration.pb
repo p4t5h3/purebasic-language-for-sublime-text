@@ -28,11 +28,11 @@ Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ;                       ^ storage.modifier.purebasic
 ;                        ^^^^ variable.parameter.purebasic
 ;                            ^ punctuation.separator.purebasic
-;                             ^^^^^^^^^^^^^ storage.type.struct
+;                             ^^^^^^^^^^^^^ storage.type.struct.purebasic
 ;                                          ^ punctuation.separator.purebasic
 ;                                            ^^^^^^^^^^ variable.parameter.purebasic
 ;                                                      ^ punctuation.separator.purebasic
-;                                                       ^ storage.type.bool
+;                                                       ^ storage.type.bool.purebasic
 ;                                                         ^ keyword.operator.assignment.purebasic
 ;                                                           ^ punctuation.definition.variable.purebasic
 ;                                                           ^^^^^^ support.constant.purebasic
