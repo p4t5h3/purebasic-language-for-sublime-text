@@ -2,6 +2,9 @@
 
 This is a spare time experiment to extend Sublime Text with convenient support for PureBasic.
 
+For now the most recent and stable PureBasic release represents the specification to conform to.
+Deprecated or removed symbols from past releases can also be supported, if no conflicts result from that.
+
 ## Syntax Definition
 
 This package ships with a syntax definition which may not cover everything (yet) but most of what matters for a pleasant editing and reading experience.
