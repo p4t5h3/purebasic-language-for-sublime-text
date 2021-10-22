@@ -9,6 +9,14 @@ ProcedureDLL Minimum()
 ;                    ^ punctuation.section.parens.end.purebasic
 EndProcedure
 
+Minimum()
+; <- meta.function-call.purebasic
+;^^^^^^^^ meta.function-call.purebasic
+; <- variable.function.purebasic
+;^^^^^^ variable.function.purebasic
+;      ^ punctuation.section.parens.begin.purebasic
+;       ^ punctuation.section.parens.end.purebasic
+
 Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ; <- keyword.declaration.function.purebasic
 ;^^^^^^^^ keyword.declaration.function.purebasic
