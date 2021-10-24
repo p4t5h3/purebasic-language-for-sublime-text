@@ -59,3 +59,5 @@ Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ; <- meta.function.purebasic
 EndProcedure
 ; <- meta.function.purebasic
+
+GetUserName(#PB_Null, #True)

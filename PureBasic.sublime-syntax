@@ -6,14 +6,21 @@ file_extensions:
   - pbi
 scope: source.purebasic
 contexts:
-  main:
-    - match: '"'
-      scope: punctuation.definition.string.begin.purebasic
-      push: double_quoted_string
-
+  basics:
     - match: ';'
       scope: punctuation.definition.comment.purebasic
-      push: line_comment
+      push:
+        - meta_scope: comment.line.purebasic
+        - match: $
+          pop: true
+
+    - match: '"'
+      scope: punctuation.definition.string.begin.purebasic
+      push: 
+        - meta_scope: string.quoted.double.purebasic
+        - match: '"'
+          scope: punctuation.definition.string.end.purebasic
+          pop: true
 
     - match: '\b(Break|Case|Continue|Default|Else|End|EndIf|EndSelect|ElseIf|Else|For|ForEach|ForEver|If|Next|Repeat|Select|To|Until|Wend|While)\b'
       scope: keyword.control.purebasic
@@ -27,11 +34,7 @@ contexts:
     - match: '='
       scope: keyword.assignment.purebasic
 
-    - match: '\b(Debug|Declare|EnableASM|EnableExplicit|NewList|Enumeration|EndEnumeration|Procedure|ProcedureDLL|ProcedureReturn|EndProcedure|Macro|EndMacro|DataSection|EndDataSection|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|UseModule|UnuseModule)\b'
-      scope: keyword.other.purebasic
-
-      # Compiler keywords
-    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect)\b'
+    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|NewList|Enumeration|EndEnumeration|Macro|EndMacro|DataSection|EndDataSection|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|UseModule|UnuseModule)\b'
       scope: keyword.other.purebasic
 
     - match: '\b(Global|Protected|Static)\b'
@@ -45,16 +48,65 @@ contexts:
     - match: '#([\w_]+)\b'
       scope: variable.other.constant.purebasic
 
+      # This is wrong, it also applies to the colon in "*User.UserStructure". Can numbers be written startign with a colon in PB?
     - match: '\b(-)?[0-9.]+\b'
       scope: constant.numeric.purebasic
 
-  double_quoted_string:
-    - meta_scope: string.quoted.double.purebasic
-    - match: '"'
-      scope: punctuation.definition.string.end.purebasic
+  main:
+    - include: basics
+
+# Calls  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    - match: \b(\w+)(\()
+      captures:
+        1: entity.name.function.purebasic
+        2: punctuation.section.parens.begin.purebasic
+      push:
+        - meta_scope: meta.function-call.purebasic
+        - include: basics
+        - match: \)
+          scope: punctuation.section.parens.end.purebasic
+          pop: true
+
+# Forward Declarations - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    - match: \b(Declare|DeclareCDLL|DeclareDLL)((\.)(\w+))?\s+(\w+)(\()
+      captures:
+        1: keyword.declaration.function.purebasic
+        3: punctuation.separator.purebasic
+        4: meta.function.return-type.purebasic storage.type.purebasic
+        5: entity.name.function.forward-decl.purebasic
+        6: punctuation.section.parens.begin.purebasic
+      push:
+        - meta_content_scope: meta.function.parameters.purebasic
+        - include: basics
+        - match: \)
+          scope: punctuation.section.parens.end.purebasic
+          pop: true
+
+# Procedures - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    - match: \b(Procedure|ProcedureC|ProcedureCDLL|ProcedureDLL)((\.)(\w+))?\s+(\w+)
+      captures:
+        1: keyword.declaration.function.purebasic
+        3: punctuation.separator.purebasic
+        4: meta.function.return-type.purebasic storage.type.purebasic
+        5: entity.name.function.purebasic
+      push: procedure_implementation
+
+  procedure_implementation:
+    - meta_scope: meta.function.purebasic
+    - include: main
+    - match: \(
+      scope: punctuation.section.parens.begin.purebasic
+      set: procedure_implementation_parameters
+    - match: \bEndProcedure\b
+      scope: keyword.other.purebasic
       pop: true
 
-  line_comment:
-    - meta_scope: comment.line.purebasic
-    - match: $
-      pop: true
+  procedure_implementation_parameters:
+    - meta_content_scope: meta.function.parameters.purebasic
+    - include: basics
+    - match: \)
+      scope: punctuation.section.parens.end.purebasic
+      set: procedure_implementation
