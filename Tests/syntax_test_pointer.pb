@@ -1,4 +1,6 @@
-﻿EnableExplicit
+﻿; SYNTAX TEST "Packages/User/purebasic-language-for-sublime-text/PureBasic.sublime-syntax"
+
+EnableExplicit
 
 Global *eh = 0
 ; <- storage.modifier.purebasic
