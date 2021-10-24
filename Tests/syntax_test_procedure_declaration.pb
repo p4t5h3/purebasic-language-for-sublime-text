@@ -41,8 +41,8 @@ Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ;           ^^^^^^^^^^^ entity.name.function.purebasic
 ;                      ^ punctuation.section.parens.begin.purebasic
 ;                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function.parameters.purebasic
-;                       ^ storage.modifier.purebasic
-;                        ^^^^ variable.parameter.purebasic
+;                       ^ punctuation.definition.variable
+;                       ^^^^^ variable.parameter.purebasic
 ;                            ^ punctuation.separator.purebasic
 ;                             ^^^^^^^^^^^^^ storage.type.struct.purebasic
 ;                                          ^ punctuation.separator.purebasic
