@@ -1,5 +1,20 @@
 ; SYNTAX TEST "Packages/User/purebasic-language-for-sublime-text/PureBasic.sublime-syntax"
 
+Declare Minimum()
+; <- keyword.declaration.function.purebasic
+;^^^^^^ keyword.declaration.function.purebasic
+;       ^^^^^^^ entity.name.function.forward-decl.purebasic
+;              ^ punctuation.section.parens.begin.purebasic
+;               ^ punctuation.section.parens.end.purebasic
+
+Declare.s GetUserName(*User.UserStructure, Capitalize.b = #False)
+; <- keyword.declaration.function.purebasic
+;^^^^^^ keyword.declaration.function.purebasic
+;      ^ punctuation.separator.purebasic
+;       ^ meta.function.return-type.purebasic storage.type.purebasic
+;         ^^^^^^^^^^^ entity.name.function.forward-decl.purebasic
+;                    ^ punctuation.section.parens.begin.purebasic
+
 ProcedureDLL Minimum()
 ; <- keyword.declaration.function.purebasic
 ;^^^^^^^^^^^ keyword.declaration.function.purebasic
@@ -20,7 +35,8 @@ Minimum()
 Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ; <- keyword.declaration.function.purebasic
 ;^^^^^^^^ keyword.declaration.function.purebasic
-;^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function.declaration.purebasic
+;^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function.declaration.purebasic
+;        ^ punctuation.separator.purebasic
 ;         ^ meta.function.return-type.purebasic storage.type.purebasic
 ;           ^^^^^^^^^^^ entity.name.function.purebasic
 ;                      ^ punctuation.section.parens.begin.purebasic
