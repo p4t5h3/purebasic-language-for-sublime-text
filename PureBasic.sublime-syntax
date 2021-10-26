@@ -31,6 +31,9 @@ contexts:
     - match: '\+|-|\*|/|%|<<|>>'
       scope: keyword.operator.arithmetic.purebasic
 
+    - match: '&|\||!|~'
+      scope: keyword.operator.bitwise.purebasic
+
     - match: '(<|>|<>|<=|>=)'
       scope: keyword.comparison.purebasic
 
