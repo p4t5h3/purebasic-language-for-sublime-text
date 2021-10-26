@@ -48,8 +48,9 @@ contexts:
     - match: '#([\w_]+)\b'
       scope: variable.other.constant.purebasic
 
-      # This is wrong, it also applies to the colon in "*User.UserStructure". Can numbers be written startign with a colon in PB?
-    - match: '\b(-)?[0-9.]+\b'
+      # Integers, floating point numbers and exponential expressions.
+    - match: \-?\d+(\.\d+)?(e\-\d+)?
+    # - match: '\b-?[0-9]+(\.[0-9])?(e\-\d+)?\b'
       scope: constant.numeric.purebasic
 
   main:
