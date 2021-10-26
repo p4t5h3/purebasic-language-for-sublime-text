@@ -1,11 +1,11 @@
 # PureBasic Language Support for Sublime Text
 
-This is a spare time experiment to extend Sublime Text with convenient support for PureBasic.
+This is a spare time experiment to extend [Sublime Text](https://www.sublimetext.com) with convenient support for [PureBasic](https://www.purebasic.com).
 
 For now the most recent and stable PureBasic release represents the specification to conform to.
 Deprecated or removed symbols from past releases can also be supported, if no conflicts result from that.
 
-**If you notice anything like a PureBasic keyword or standard library procedure missing, please report an issue.**
+**If you notice anything like a PureBasic keyword or standard library procedure missing, please [report an issue](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues).**
 
 ## Syntax Definition
 
@@ -16,12 +16,12 @@ If you stumble across unrecognized keywords or other expressions, then please fi
 
 ## Completions
 
-The package ships snippets for regularly used constructs like conditional clauses or procedure implementations.
-Also it provides completions for keywords and the library procedures (including parameters) shipped with PureBasic.
+The package ships [snippets](https://www.sublimetext.com/docs/completions.html) for regularly used constructs like conditional clauses or procedure implementations.
+Also it provides [completions](https://www.sublimetext.com/docs/completions.html) for keywords and the library procedures (including parameters) shipped with PureBasic.
 
 ## Build System
 
-This package features a simple Sublime Text build system for PureBasic.
+This package features a simple [Sublime Text build system](https://www.sublimetext.com/docs/build_systems.html) for PureBasic.
 It enables you to build and run the current PureBasic source code file.
 
 The build system assumes the PureBasic compiler to be available in the `PATH`.
@@ -33,7 +33,7 @@ Years ago, when there was still Sublime Text 2 and no Atom around, I tried to ad
 My main motivation was the cumbersome user experience of the PureBasic IDE, especially on Linux and macOS.
 Back then I was not close to where I am now in terms of software engineering skills. So I never got far.
 
-When Atom was released it took not much time for me to switch to it as a sidekick instead of Sublime Text.
+When [Atom](https://atom.io) was released it took not much time for me to switch to it as a sidekick instead of Sublime Text.
 It was much more approachable for me due to the web technologies used and completely free.
 When I was thinking about a more convenient way of editing PureBasic source code, I created a language support package.
 It turned out pretty fine (in my opinion). Though PureBasic already was nostalgy instead of a serious interest.
