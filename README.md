@@ -27,6 +27,14 @@ It enables you to build and run the current PureBasic source code file.
 The build system assumes the PureBasic compiler to be available in the `PATH`.
 Please refer to the PureBasic documentation for setting up commandline usage.
 
+## Installation
+
+This package is still in development and not fit for release as something I would ship as a 1.0.0.
+However it can be installed by cloning the repository in your user package directory of Sublime Text.
+Currently I assume that you are familiar with Sublime Text.
+
+[The goal is to release the initial release version on Package Control.](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues/3)
+
 ## History
 
 Years ago, when there was still Sublime Text 2 and no Atom around, I tried to add support for PureBasic to Sublime Text.
