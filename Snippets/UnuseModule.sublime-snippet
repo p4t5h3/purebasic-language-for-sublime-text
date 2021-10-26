@@ -1,0 +1,6 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>UnuseModule</tabTrigger>
+    <content><![CDATA[UnuseModule ${0:ModuleName}]]></content>
+    <description>module exclusion statement</description>
+</snippet>

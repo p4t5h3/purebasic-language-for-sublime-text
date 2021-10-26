@@ -1,0 +1,33 @@
+{
+  "scope"      : "source.purebasic",
+  "completions": [
+      {
+        "details"   : "Decodes the specified string using the Base64 algorithm",
+        "contents"  : "Base64Decoder(${1:Input$}, ${2:*OutputBuffer}, ${3:*OutputSize})$4",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "Base64Decoder"
+      },
+      {
+        "details"   : "Encodes the specified buffer using the Base64 algorithm",
+        "contents"  : "Base64Encoder(${1:*InputBuffer}, ${2:InputSize}, ${3:, [Flags]})$4",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "Base64Encoder"
+      },
+      {
+        "details"   : "Decodes the specified buffer using the Base64 algorithm",
+        "contents"  : "Base64DecoderBuffer(${1:*Input}, ${2:InputSize}, ${3:*Output}, ${4:OutputSize})$5",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "Base64DecoderBuffer"
+      },
+      {
+        "details"   : "Encodes the specified buffer using the Base64 algorithm",
+        "contents"  : "Base64EncoderBuffer(${1:*Input}, ${2:InputSize}, ${3:*Output}, ${4:OutputSize})$5",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "Base64EncoderBuffer"
+      }
+    ]
+}

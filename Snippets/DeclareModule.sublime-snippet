@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>DeclareModule</tabTrigger>
+    <content><![CDATA[DeclareModule ${1:ModuleName}
+    $0
+EndDeclareModule]]></content>
+    <description>module declaration block</description>
+</snippet>

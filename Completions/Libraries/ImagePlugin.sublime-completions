@@ -1,0 +1,59 @@
+{
+  "scope"      : "source.purebasic",
+  "completions": [
+      {
+        "details" : "Enables the JPEG support for CatchImage(), LoadImage(), CatchSprite() and LoadSprite()",
+        "contents": "UseJPEGImageDecoder()$1",
+        "kind"    : "function",
+        "trigger" : "UseJPEGImageDecoder"
+      },
+      {
+        "details" : "Enables the JPEG 2000 support for CatchImage(), LoadImage(), CatchSprite() and LoadSprite()",
+        "contents": "UseJPEG2000ImageDecoder()$1",
+        "kind"    : "function",
+        "trigger" : "UseJPEG2000ImageDecoder"
+      },
+      {
+        "details" : "Enables the TGA support for CatchImage(), LoadImage(), CatchSprite() and LoadSprite()",
+        "contents": "UseTGAImageDecoder()$1",
+        "kind"    : "function",
+        "trigger" : "UseTGAImageDecoder"
+      },
+      {
+        "details" : "Enables the JPEG support for SaveImage() and SaveSprite()",
+        "contents": "UseJPEGImageEncoder()$1",
+        "kind"    : "function",
+        "trigger" : "UseJPEGImageEncoder"
+      },
+      {
+        "details" : "Enables the JPEG 2000 support for SaveImage() and SaveSprite()",
+        "contents": "UseJPEG2000ImageEncoder()$1",
+        "kind"    : "function",
+        "trigger" : "UseJPEG2000ImageEncoder"
+      },
+      {
+        "details" : "Enables the PNG support for CatchImage(), LoadImage(), CatchSprite() and LoadSprite()",
+        "contents": "UsePNGImageDecoder()$1",
+        "kind"    : "function",
+        "trigger" : "UsePNGImageDecoder"
+      },
+      {
+        "details" : "Enables the GIF image support for the CatchImage(), LoadImage(), CatchSprite() and LoadSprite() functions. Only LoadImage() and CatchImage() supports multi-frame GIF (it will result into a multi-frame image).",
+        "contents": "UseGIFImageDecoder()$1",
+        "kind"    : "function",
+        "trigger" : "UseGIFImageDecoder"
+      },
+      {
+        "details" : "Enables the TIFF support for CatchImage(), LoadImage(), CatchSprite() and LoadSprite()",
+        "contents": "UseTIFFImageDecoder()$1",
+        "kind"    : "function",
+        "trigger" : "UseTIFFImageDecoder"
+      },
+      {
+        "details" : "Enables the PNG support for SaveImage() and SaveSprite()",
+        "contents": "UsePNGImageEncoder()$1",
+        "kind"    : "function",
+        "trigger" : "UsePNGImageEncoder"
+      }
+    ]
+}

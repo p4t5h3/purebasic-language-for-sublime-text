@@ -1,0 +1,25 @@
+{
+  "scope"      : "source.purebasic",
+  "completions": [
+      {
+        "details" : "Free the array. \"Dim\" has to be called to use it again.",
+        "contents": "FreeArray(${1:Array()})$2",
+        "kind"    : "function",
+        "trigger" : "FreeArray"
+      },
+      {
+        "details"   : "Copy all the elements from the array to the destination array to have two identical arrays",
+        "contents"  : "CopyArray(${1:SourceArray()}, ${2:DestinationArray()})$3",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "CopyArray"
+      },
+      {
+        "details"   : "Returns the array size",
+        "contents"  : "ArraySize(${1:Array()})$2",
+        "annotation": "Integer",
+        "kind"      : "function",
+        "trigger"   : "ArraySize"
+      }
+    ]
+}
