@@ -43,7 +43,3 @@ Debug 2*eh
 ;     ^ constant.numeric.integer.purebasic
 ;      ^ keyword.operator.arithmetic.purebasic
 ;       ^^ variable.other
-; IDE Options = PureBasic 5.73 LTS (MacOS X - x64)
-; CursorPosition = 29
-; FirstLine = 5
-; EnableXP

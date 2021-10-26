@@ -60,4 +60,13 @@ Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 EndProcedure
 ; <- meta.function.purebasic
 
-GetUserName(#PB_Null, #True)
+GetUserName(Minimum(), #True)
+; <- meta.function-call.purebasic
+;^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function-call.purebasic
+; <- variable.function.purebasic
+;^^^^^^^^^^ variable.function.purebasic
+;          ^ punctuation.section.parens.begin.purebasic
+;           ^^^^^^^ variable.function.purebasic
+;                  ^ punctuation.section.parens.begin.purebasic
+;                   ^ punctuation.section.parens.end.purebasic
+;                           ^ punctuation.section.parens.end.purebasic
