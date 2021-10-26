@@ -53,10 +53,7 @@ contexts:
     # - match: '\b-?[0-9]+(\.[0-9])?(e\-\d+)?\b'
       scope: constant.numeric.purebasic
 
-  main:
-    - include: basics
-
-# Calls  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# Calls  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     - match: \b(\w+)(\()
       captures:
@@ -68,6 +65,9 @@ contexts:
         - match: \)
           scope: punctuation.section.parens.end.purebasic
           pop: true
+
+  main:
+    - include: basics
 
 # Forward Declarations - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
