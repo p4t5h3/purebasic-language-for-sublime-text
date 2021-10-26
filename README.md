@@ -5,11 +5,19 @@ This is a spare time experiment to extend Sublime Text with convenient support f
 For now the most recent and stable PureBasic release represents the specification to conform to.
 Deprecated or removed symbols from past releases can also be supported, if no conflicts result from that.
 
+**If you notice anything like a PureBasic keyword or standard library procedure missing, please report an issue.**
+
 ## Syntax Definition
 
 This package ships with a syntax definition which may not cover everything (yet) but most of what matters for a pleasant editing and reading experience.
+In example: you can quickly navigate to procedure implementations because Sublime Text recognizes them because of the syntax definition.
 
 If you stumble across unrecognized keywords or other expressions, then please file an issue in [the issue tracker](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues).
+
+## Completions
+
+The package ships snippets for regularly used constructs like conditional clauses or procedure implementations.
+Also it provides completions for keywords and the library procedures (including parameters) shipped with PureBasic.
 
 ## Build System
 
