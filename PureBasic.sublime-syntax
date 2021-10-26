@@ -28,6 +28,9 @@ contexts:
     - match: '\b(And|Not|Or|XOr)\b'
       scope: keyword.logical.purebasic
 
+    - match: '\+|-|\*|/|%|<<|>>'
+      scope: keyword.operator.arithmetic.purebasic
+
     - match: '(<|>|<>|<=|>=)'
       scope: keyword.comparison.purebasic
 
