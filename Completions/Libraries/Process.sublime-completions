@@ -1,0 +1,155 @@
+{
+  "scope"      : "source.purebasic",
+  "completions": [
+    {
+      "details" : "returns the number of bytes available for reading",
+      "contents": "AvailableProgramOutput(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "AvailableProgramOutput"
+    },
+    {
+      "details" : "Close the interaction with the specified program",
+      "contents": "CloseProgram(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "CloseProgram"
+    },
+    {
+      "details" : "Get the number of parameters passed to this program",
+      "contents": "CountProgramParameters()$1",
+      "kind"    : "function",
+      "trigger" : "CountProgramParameters"
+    },
+    {
+      "details" : "Get the name of the currently examined environment variable",
+      "contents": "EnvironmentVariableName()$1",
+      "kind"    : "function",
+      "trigger" : "EnvironmentVariableName"
+    },
+    {
+      "details" : "Get the value of the currently examined environment variable",
+      "contents": "EnvironmentVariableValue()$1",
+      "kind"    : "function",
+      "trigger" : "EnvironmentVariableValue"
+    },
+    {
+      "details" : "Start examining the environment block",
+      "contents": "ExamineEnvironmentVariables()$1",
+      "kind"    : "function",
+      "trigger" : "ExamineEnvironmentVariables"
+    },
+    {
+      "details" : "Return the content of the environment variable",
+      "contents": "GetEnvironmentVariable(${1:Name.s})$2",
+      "kind"    : "function",
+      "trigger" : "GetEnvironmentVariable"
+    },
+    {
+      "details" : "Check if the specified program was created by RunProgram",
+      "contents": "IsProgram(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "IsProgram"
+    },
+    {
+      "details" : "Terminate the specified program",
+      "contents": "KillProgram(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "KillProgram"
+    },
+    {
+      "details" : "Examine the next variable in the environment block",
+      "contents": "NextEnvironmentVariable()$1",
+      "kind"    : "function",
+      "trigger" : "NextEnvironmentVariable"
+    },
+    {
+      "details" : "Get the exitcode of the specified program",
+      "contents": "ProgramExitCode(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "ProgramExitCode"
+    },
+    {
+      "details" : "Get the full path and filename of the executable of this program",
+      "contents": "ProgramFilename()$1",
+      "kind"    : "function",
+      "trigger" : "ProgramFilename"
+    },
+    {
+      "details" : "Returns the global Process ID for the running program",
+      "contents": "ProgramID(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "ProgramID"
+    },
+    {
+      "details" : "Get the next passed program parameter, or the parameter at Index",
+      "contents": "ProgramParameter()$1",
+      "kind"    : "function",
+      "trigger" : "ProgramParameter"
+    },
+    {
+      "details" : "Check if the specified program is still running",
+      "contents": "ProgramRunning(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "ProgramRunning"
+    },
+    {
+      "details" : "Read output of the program into a buffer",
+      "contents": "ReadProgramData(${1:Program}, ${2:*Buffer})$3",
+      "kind"    : "function",
+      "trigger" : "ReadProgramData"
+    },
+    {
+      "details" : "Read a line from the standard error output of the program",
+      "contents": "ReadProgramError(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "ReadProgramError"
+    },
+    {
+      "details" : "Read a line from the standard output of the program",
+      "contents": "ReadProgramString(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "ReadProgramString"
+    },
+    {
+      "details" : "Remove the given variable from the environment",
+      "contents": "RemoveEnvironmentVariable(${1:Name.s})$2",
+      "kind"    : "function",
+      "trigger" : "RemoveEnvironmentVariable"
+    },
+    {
+      "details" : "Launch an external program",
+      "contents": "RunProgram(${1:ProgramName.s})$2",
+      "kind"    : "function",
+      "trigger" : "RunProgram"
+    },
+    {
+      "details" : "Assign the given Value$ to the environment variable",
+      "contents": "SetEnvironmentVariable(${1:Name.s})$2",
+      "kind"    : "function",
+      "trigger" : "SetEnvironmentVariable"
+    },
+    {
+      "details" : "Wait for the specified program to end",
+      "contents": "WaitProgram(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "WaitProgram"
+    },
+    {
+      "details" : "Write data to the standard input of the program",
+      "contents": "WriteProgramData(${1:Program}, ${2:*Buffer})$3",
+      "kind"    : "function",
+      "trigger" : "WriteProgramData"
+    },
+    {
+      "details" : "Write the string to the standard input of the program including a newline",
+      "contents": "WriteProgramStringN(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "WriteProgramStringN"
+    },
+    {
+      "details" : "Write the string to the standard input of the program",
+      "contents": "WriteProgramString(${1:Program})$2",
+      "kind"    : "function",
+      "trigger" : "WriteProgramString"
+    }
+  ]
+}
