@@ -1,69 +1,325 @@
 {
     "scope": "source.purebasic",
     "completions": [
-        "And",
-        "Break",
-        "Case",
-        "CompilerCase",
-        "CompilerDefault",
-        "CompilerElse",
-        "CompilerEndIf",
-        "CompilerEndSelect",
-        "CompilerError",
-        "CompilerIf",
-        "CompilerSelect",
-        "CompilerSelect",
-        "CompilerWarning",
-        "Continue",
-        "DataSection",
-        "Debug",
-        "Declare",
-        "DeclareModule",
-        "Default",
-        "Else",
-        "Else",
-        "ElseIf",
-        "EnableASM",
-        "EnableExplicit",
-        "End",
-        "EndDataSection",
-        "EndDeclareModule",
-        "EndEnumeration",
-        "EndIf",
-        "EndMacro",
-        "EndModule",
-        "EndProcedure",
-        "EndSelect",
-        "EndStructure",
-        "Enumeration",
-        "Extends",
-        "For",
-        "ForEach",
-        "ForEver",
-        "Global",
-        "If",
-        "IncludeFile",
-        "Macro",
-        "Module",
-        "NewList",
-        "Next",
-        "Not",
-        "Or",
-        "Procedure",
-        "ProcedureDLL",
-        "ProcedureReturn",
-        "Protected",
-        "Repeat",
-        "Select",
-        "Static",
-        "Structure",
-        "To",
-        "Until",
-        "UnuseModule",
-        "UseModule",
-        "Wend",
-        "While",
-        "XIncludeFile",
-        "XOr"
+        {
+            "trigger": "And",
+            "contents": "And",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Break",
+            "contents": "Break",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Case",
+            "contents": "Case",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerCase",
+            "contents": "CompilerCase",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerDefault",
+            "contents": "CompilerDefault",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerElse",
+            "contents": "CompilerElse",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerEndIf",
+            "contents": "CompilerEndIf",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerEndSelect",
+            "contents": "CompilerEndSelect",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerError",
+            "contents": "CompilerError",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerIf",
+            "contents": "CompilerIf",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerSelect",
+            "contents": "CompilerSelect",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerSelect",
+            "contents": "CompilerSelect",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerWarning",
+            "contents": "CompilerWarning",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Continue",
+            "contents": "Continue",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "DataSection",
+            "contents": "DataSection",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Debug",
+            "contents": "Debug",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Declare",
+            "contents": "Declare",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "DeclareModule",
+            "contents": "DeclareModule",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Default",
+            "contents": "Default",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Else",
+            "contents": "Else",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Else",
+            "contents": "Else",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "ElseIf",
+            "contents": "ElseIf",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EnableASM",
+            "contents": "EnableASM",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EnableExplicit",
+            "contents": "EnableExplicit",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "End",
+            "contents": "End",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndDataSection",
+            "contents": "EndDataSection",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndDeclareModule",
+            "contents": "EndDeclareModule",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndEnumeration",
+            "contents": "EndEnumeration",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndIf",
+            "contents": "EndIf",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndMacro",
+            "contents": "EndMacro",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndModule",
+            "contents": "EndModule",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndProcedure",
+            "contents": "EndProcedure",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndSelect",
+            "contents": "EndSelect",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndStructure",
+            "contents": "EndStructure",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Enumeration",
+            "contents": "Enumeration",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Extends",
+            "contents": "Extends",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "For",
+            "contents": "For",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "ForEach",
+            "contents": "ForEach",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "ForEver",
+            "contents": "ForEver",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Global",
+            "contents": "Global",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "If",
+            "contents": "If",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "IncludeFile",
+            "contents": "IncludeFile",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Macro",
+            "contents": "Macro",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Module",
+            "contents": "Module",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "NewList",
+            "contents": "NewList",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Next",
+            "contents": "Next",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Not",
+            "contents": "Not",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Or",
+            "contents": "Or",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Procedure",
+            "contents": "Procedure",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "ProcedureDLL",
+            "contents": "ProcedureDLL",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "ProcedureReturn",
+            "contents": "ProcedureReturn",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Protected",
+            "contents": "Protected",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Repeat",
+            "contents": "Repeat",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Select",
+            "contents": "Select",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Static",
+            "contents": "Static",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Structure",
+            "contents": "Structure",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "To",
+            "contents": "To",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Until",
+            "contents": "Until",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "UnuseModule",
+            "contents": "UnuseModule",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "UseModule",
+            "contents": "UseModule",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Wend",
+            "contents": "Wend",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "While",
+            "contents": "While",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "XIncludeFile",
+            "contents": "XIncludeFile",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "XOr",
+            "contents": "XOr",
+            "kind": "keyword"
+        }
     ]
 }
