@@ -1,0 +1,131 @@
+{
+  "scope"      : "source.purebasic",
+  "completions": [
+    {
+      "details" : "Adds a new empty element after the current element or as the first item in the list if there are no elements in it",
+      "contents": "AddElement(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "AddElement"
+    },
+    {
+      "details" : "Changes the current element of the specified list to the given new element",
+      "contents": "ChangeCurrentElement(${1:List()}, ${2:*NewElement})$0",
+      "kind"    : "function",
+      "trigger" : "ChangeCurrentElement"
+    },
+    {
+      "details" : "Clears all the elements in this list and releases their memory",
+      "contents": "ClearList(${1List()})$0",
+      "kind"    : "function",
+      "trigger" : "ClearList"
+    },
+    {
+      "details" : "Copy the contents of one list to another list",
+      "contents": "CopyList(${1:SourceList()}, ${2:DestinationList()})$0",
+      "kind"    : "function",
+      "trigger" : "CopyList"
+    },
+    {
+      "details" : "Remove the current element from the list",
+      "contents": "DeleteElement(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "DeleteElement"
+    },
+    {
+      "details" : "Changes the current list element to the first list element",
+      "contents": "FirstElement(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "FirstElement"
+    },
+    {
+      "details" : "Free the specified list and release all its associated memory",
+      "contents": "FreeList(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "FreeList"
+    },
+    {
+      "details" : "Inserts a new empty element before the current element, or at the start of the list if the list is empty (i.e. has no elements in it)",
+      "contents": "InsertElement(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "InsertElement"
+    },
+    {
+      "details" : "Change the current list element to the last list element",
+      "contents": "LastElement(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "LastElement"
+    },
+    {
+      "details" : "Find out the position of the current element in the list, considering that the first element is at the position 0",
+      "contents": "ListIndex(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "ListIndex"
+    },
+    {
+      "details" : "Returns the number of elements in the list",
+      "contents": "ListSize(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "ListSize"
+    },
+    {
+      "details" : "Moves all elements from the SourceList() to the DestinationList()",
+      "contents": "MergeLists(${1:SourceList()}, ${2:DestinationList()})$0",
+      "kind"    : "function",
+      "trigger" : "MergeLists"
+    },
+    {
+      "details" : "Moves the current element of the specified list to a different position in the list",
+      "contents": "MoveElement(${1:List()}, ${2:Location})$0",
+      "kind"    : "function",
+      "trigger" : "MoveElement"
+    },
+    {
+      "details" : "Moves from the current element to the next element in the list, or onto the first element if you have previously called ResetList()",
+      "contents": "NextElement(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "NextElement"
+    },
+    {
+      "details" : "Restores the current element of the list previously remembered using PushListPosition()",
+      "contents": "PopListPosition(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "PopListPosition"
+    },
+    {
+      "details" : "Moves from the current element to the previous element in the list",
+      "contents": "PreviousElement(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "PreviousElement"
+    },
+    {
+      "details" : "Remembers the current element (if any) of the list so it can later be restored using PopListPosition()",
+      "contents": "PushListPosition(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "PushListPosition"
+    },
+    {
+      "details" : "Resets the current list element to be before the first element",
+      "contents": "ResetList(${1:List()})$0",
+      "kind"    : "function",
+      "trigger" : "ResetList"
+    },
+    {
+      "details" : "Change the current list element to the element at the specified position",
+      "contents": "SelectElement(${1:List()}, ${2:Position})$0",
+      "kind"    : "function",
+      "trigger" : "SelectElement"
+    },
+    {
+      "details" : "Swaps the position of two elements in the specified list",
+      "contents": "SwapElements(${1:List()}, ${2:*FirstElement}, ${3:SecondElement})$0",
+      "kind"    : "function",
+      "trigger" : "SwapElements"
+    },
+    {
+      "details" : "Moves the elements in SourceList() from the current element onwards to the DestinationList()",
+      "contents": "SplitList(${1:SourceList()}, ${2:DestinationList()})$0",
+      "kind"    : "function",
+      "trigger" : "SplitList"
+    }
+  ]
+}

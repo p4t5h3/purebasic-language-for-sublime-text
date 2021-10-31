@@ -2348,12 +2348,6 @@
       "trigger" : "NextPreferenceKey"
     },
     {
-      "details" : "Move all elements from List() to DestinationList()",
-      "contents": "MergeLists(${1:List()})$2",
-      "kind"    : "function",
-      "trigger" : "MergeLists"
-    },
-    {
       "details" : "Change the texture filtering mode for the #Material",
       "contents": "MaterialFilteringMode(${1:#Material})$2",
       "kind"    : "function",
@@ -2924,12 +2918,6 @@
       "trigger" : "XMLChildCount"
     },
     {
-      "details" : "Swap the position of the specified elements",
-      "contents": "SwapElements(${1:List()}, ${2:*FirstElement})$3",
-      "kind"    : "function",
-      "trigger" : "SwapElements"
-    },
-    {
       "details" : "Test if the two sprites are overlapped",
       "contents": "SpritePixelCollision(${1:#Sprite1}, ${2:x1}, ${3:y1}, ${4:#Sprite2}, ${5:x2})$6",
       "kind"    : "function",
@@ -3270,12 +3258,6 @@
       "contents": "ContainerGadget3D(${1:#Gadget3D}, ${2:x}, ${3:y}, ${4:Width})$5",
       "kind"    : "function",
       "trigger" : "ContainerGadget3D"
-    },
-    {
-      "details" : "Changes the current element of the specified list to the given new element",
-      "contents": "ChangeCurrentElement(${1:List()})$2",
-      "kind"    : "function",
-      "trigger" : "ChangeCurrentElement"
     },
     {
       "details" : "Returns the #Billboard X absolute position in the #BillboardGroup",
@@ -5882,12 +5864,6 @@
       "trigger" : "MovieAudio"
     },
     {
-      "details" : "Move the current element to a different position in the list",
-      "contents": "MoveElement(${1:List()})$2",
-      "kind"    : "function",
-      "trigger" : "MoveElement"
-    },
-    {
       "details" : "Open a blocking requester to display some information",
       "contents": "MessageRequester(${1:Title.s})$2",
       "kind"    : "function",
@@ -6210,12 +6186,6 @@
       "contents": "SerialPortError(${1:#SerialPort})$2",
       "kind"    : "function",
       "trigger" : "SerialPortError"
-    },
-    {
-      "details" : "Change the current list element to the element at the specified position",
-      "contents": "SelectElement(${1:List()})$2",
-      "kind"    : "function",
-      "trigger" : "SelectElement"
     },
     {
       "details" : "Read a string from the specified file",
@@ -6858,12 +6828,6 @@
       "contents": "StartEntityAnimation(${1:#Entity})$2",
       "kind"    : "function",
       "trigger" : "StartEntityAnimation"
-    },
-    {
-      "details" : "Split List() into List() and DestinationList()",
-      "contents": "SplitList(${1:List()})$2",
-      "kind"    : "function",
-      "trigger" : "SplitList"
     },
     {
       "details" : "Change a color in the Gadget",
