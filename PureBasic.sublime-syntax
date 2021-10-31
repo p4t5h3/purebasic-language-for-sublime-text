@@ -44,7 +44,7 @@ contexts:
     - match: '='
       scope: keyword.assignment.purebasic
 
-    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|NewList|List|Enumeration|EndEnumeration|Macro|EndMacro|DataSection|EndDataSection|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|UseModule|UnuseModule)\b'
+    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|List|Enumeration|EndEnumeration|Macro|EndMacro|DataSection|EndDataSection|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|UseModule|UnuseModule)\b'
       scope: keyword.other.purebasic
 
     - match: '\b(Global|Protected|Static)\b'
@@ -72,6 +72,15 @@ contexts:
           pop: true
 
   main:
+    - match: \b(NewList)\s+(\w+)((\.)(\w+))?(\()(\))
+      captures:
+        1: keyword.declaration.purebasic
+        2: entity.name.function.purebasic
+        4: punctuation.separator.purebasic
+        5: meta.function.return-type.purebasic storage.type.purebasic
+        6: punctuation.section.parens.begin.purebasic
+        7: punctuation.section.parens.end.purebasic
+
     - include: basics
 
 # Forward Declarations - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
