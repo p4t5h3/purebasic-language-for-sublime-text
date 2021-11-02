@@ -1,5 +1,7 @@
 # PureBasic Language Support for Sublime Text
 
+[![Syntax Tests](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/actions/workflows/main.yml/badge.svg)](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/actions/workflows/main.yml)
+
 This is a spare time experiment to extend [Sublime Text](https://www.sublimetext.com) with convenient support for [PureBasic](https://www.purebasic.com).
 
 For now the most recent and stable PureBasic release represents the specification to conform to.
