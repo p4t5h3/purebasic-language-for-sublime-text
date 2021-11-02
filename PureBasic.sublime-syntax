@@ -22,6 +22,9 @@ contexts:
           scope: punctuation.definition.string.end.purebasic
           pop: true
 
+    - match: ','
+      scope: punctuation.separator.purebasic
+
     - match: '\b(Break|Case|Continue|Default|Else|End|EndIf|EndSelect|ElseIf|Else|For|ForEach|ForEver|If|Next|Repeat|Select|To|Until|Wend|While)\b'
       scope: keyword.control.purebasic
 
@@ -79,18 +82,28 @@ contexts:
         4: storage.type.purebasic
       push:
         - include: basics
-
         - match: \b(\w+)((\.)(\w+))?\b
           captures:
             1: variable.other.purebasic
             3: punctuation.separator.purebasic
             4: storage.type.purebasic
-
-        - match: ','
-          scope: punctuation.separator.purebasic
-
         - match: '$'
           pop: true
+
+    - match: \b((Re)?Dim)\s+(\w+)((\.)(\w+))?(\()
+      captures:
+        1: keyword.declaration.purebasic
+        3: entity.name.function.purebasic
+        5: punctuation.separator.purebasic
+        6: storage.type.purebasic
+        7: punctuation.section.parens.begin.purebasic
+        8: punctuation.section.parens.end.purebasic
+      push:
+        - include: basics
+        - match: \)
+          scope: punctuation.section.parens.end.purebasic
+          pop: true
+
 
     - match: \b(NewList)\s+(\w+)((\.)(\w+))?(\()(\))
       captures:
