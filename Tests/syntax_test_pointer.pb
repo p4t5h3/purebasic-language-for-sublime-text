@@ -33,13 +33,13 @@ Debug 2 *eh
 Debug 2 * eh
 ; <- keyword.other.purebasic
 ;^^^^ keyword.other.purebasic
-;     ^ constant.numeric.integer.purebasic
+;     ^ constant.numeric.purebasic
 ;       ^ keyword.operator.arithmetic.purebasic
 ;         ^^ variable.other
 
 Debug 2*eh
 ; <- keyword.other.purebasic
 ;^^^^ keyword.other.purebasic
-;     ^ constant.numeric.integer.purebasic
+;     ^ constant.numeric.purebasic
 ;      ^ keyword.operator.arithmetic.purebasic
 ;       ^^ variable.other
