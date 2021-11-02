@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>Structure</tabTrigger>
+    <content><![CDATA[Structure ${1:StructureName}
+    $0
+EndStructure]]></content>
+    <description>structure definition block</description>
+</snippet>
