@@ -72,6 +72,26 @@ contexts:
           pop: true
 
   main:
+    - match: ^\s*(Define)((\.)(\w+))?\s+
+      captures:
+        1: keyword.declaration.purebasic
+        3: punctuation.separator.purebasic
+        4: storage.type.purebasic
+      push:
+        - include: basics
+
+        - match: \b(\w+)((\.)(\w+))?\b
+          captures:
+            1: variable.other.purebasic
+            3: punctuation.separator.purebasic
+            4: storage.type.purebasic
+
+        - match: ','
+          scope: punctuation.separator.purebasic
+
+        - match: '$'
+          pop: true
+
     - match: \b(NewList)\s+(\w+)((\.)(\w+))?(\()(\))
       captures:
         1: keyword.declaration.purebasic
