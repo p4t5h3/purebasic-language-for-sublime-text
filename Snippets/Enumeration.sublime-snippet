@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>Enumeration</tabTrigger>
+    <content><![CDATA[Enumeration ${1:EnumerationName}
+    $0
+EndEnumeration]]></content>
+    <description>enumeration block</description>
+</snippet>
