@@ -5,12 +5,11 @@ on:
     paths:
       - '**.sublime-syntax'
       - '**/syntax_test*'
-      - '**.tmPreferences'
   pull_request:
     paths:
       - '**.sublime-syntax'
       - '**/syntax_test*'
-      - '**.tmPreferences'
+  workflow_dispatch:
 
 jobs:
   syntax_tests:
