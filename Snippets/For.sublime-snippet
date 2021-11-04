@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>For</tabTrigger>
+    <content><![CDATA[For ${1:Iterator} = ${2:0} To ${3:9}
+    $0
+Next]]></content>
+    <description>for loop</description>
+</snippet>
