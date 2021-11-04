@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>RepeatUntil</tabTrigger>
+    <content><![CDATA[Repeat
+    $0
+Until $1]]></content>
+    <description>repeat loop</description>
+</snippet>

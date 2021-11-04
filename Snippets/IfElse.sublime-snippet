@@ -1,0 +1,10 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>IfElse</tabTrigger>
+    <content><![CDATA[If $1
+    $2
+Else
+    $0
+EndIf]]></content>
+    <description>conditional block</description>
+</snippet>

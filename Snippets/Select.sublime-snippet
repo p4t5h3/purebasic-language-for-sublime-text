@@ -1,0 +1,9 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>Select</tabTrigger>
+    <content><![CDATA[Select ${1:Expression}
+    Case ${2:Value}
+        $0
+EndSelect]]></content>
+    <description>switch block</description>
+</snippet>
