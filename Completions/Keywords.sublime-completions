@@ -123,7 +123,7 @@
         },
         {
             "trigger": "End",
-            "contents": "End",
+            "contents": "End ${0:ExitCode}",
             "kind": "keyword"
         },
         {
@@ -213,7 +213,7 @@
         },
         {
             "trigger": "Goto",
-            "contents": "Goto",
+            "contents": "Goto ${0:Label}",
             "kind": "keyword"
         },
         {
