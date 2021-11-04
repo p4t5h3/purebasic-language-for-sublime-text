@@ -297,6 +297,11 @@
             "kind": "keyword"
         },
         {
+            "trigger": "Swap",
+            "contents": "Swap ${1:FirstExpression}, ${0:SecondExpression}",
+            "kind": "keyword"
+        },
+        {
             "trigger": "To",
             "contents": "To",
             "kind": "keyword"
