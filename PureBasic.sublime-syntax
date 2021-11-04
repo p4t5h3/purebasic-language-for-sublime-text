@@ -25,7 +25,7 @@ contexts:
     - match: ','
       scope: punctuation.separator.purebasic
 
-    - match: '\b(Break|Case|Continue|Default|Else|End|EndIf|EndSelect|ElseIf|Else|For|ForEach|ForEver|If|Next|Repeat|Select|To|Until|Wend|While)\b'
+    - match: '\b(Break|Case|Continue|Default|Else|End|EndIf|EndSelect|ElseIf|Else|FakeReturn|For|ForEach|Forever|Gosub|Goto|If|Next|Repeat|Select|To|Until|Wend|While)\b'
       scope: keyword.control.purebasic
 
     - match: '\b(And|Not|Or|XOr)\b'

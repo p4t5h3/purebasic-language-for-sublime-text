@@ -182,6 +182,11 @@
             "kind": "keyword"
         },
         {
+            "trigger": "FakeReturn",
+            "contents": "FakeReturn",
+            "kind": "keyword"
+        },
+        {
             "trigger": "For",
             "contents": "For",
             "kind": "keyword"
@@ -192,13 +197,23 @@
             "kind": "keyword"
         },
         {
-            "trigger": "ForEver",
-            "contents": "ForEver",
+            "trigger": "Forever",
+            "contents": "Forever",
             "kind": "keyword"
         },
         {
             "trigger": "Global",
             "contents": "Global",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Gosub",
+            "contents": "Gosub",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Goto",
+            "contents": "Goto",
             "kind": "keyword"
         },
         {
