@@ -1,0 +1,6 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>NewList</tabTrigger>
+    <content><![CDATA[NewList ${1:ListName}()]]></content>
+    <description>list declaration</description>
+</snippet>
