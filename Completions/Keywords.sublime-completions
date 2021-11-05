@@ -187,6 +187,11 @@
             "kind": "keyword"
         },
         {
+            "trigger": "EndWith",
+            "contents": "EndWith",
+            "kind": "keyword"
+        },
+        {
             "trigger": "Enumeration",
             "contents": "Enumeration",
             "kind": "keyword"
@@ -339,6 +344,11 @@
         {
             "trigger": "Until",
             "contents": "Until",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "With",
+            "contents": "With",
             "kind": "keyword"
         },
         {

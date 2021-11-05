@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>With</tabTrigger>
+    <content><![CDATA[With ${1:Expression}
+    $0
+EndWith]]></content>
+    <description>with block</description>
+</snippet>

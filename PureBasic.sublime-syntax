@@ -50,7 +50,7 @@ contexts:
     - match: '='
       scope: keyword.assignment.purebasic
 
-    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|List|Enumeration|EndEnumeration|EndInterface|Macro|EndMacro|DataSection|EndDataSection|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|Swap|UseModule|UnuseModule)\b'
+    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|List|Enumeration|EndEnumeration|EndInterface|Macro|EndMacro|DataSection|EndDataSection|EndWith|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|Swap|With|UseModule|UnuseModule)\b'
       scope: keyword.other.purebasic
 
     - match: '\b(Global|Protected|Static)\b'
