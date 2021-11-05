@@ -47,7 +47,7 @@ contexts:
     - match: '='
       scope: keyword.assignment.purebasic
 
-    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|List|Enumeration|EndEnumeration|Macro|EndMacro|DataSection|EndDataSection|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|Swap|UseModule|UnuseModule)\b'
+    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|List|Enumeration|EndEnumeration|EndInterface|Macro|EndMacro|DataSection|EndDataSection|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|Swap|UseModule|UnuseModule)\b'
       scope: keyword.other.purebasic
 
     - match: '\b(Global|Protected|Static)\b'
@@ -114,6 +114,16 @@ contexts:
         6: punctuation.section.parens.begin.purebasic
         7: punctuation.section.parens.end.purebasic
 
+    - match: \b(Interface)\s+(\w+)\b
+      captures:
+        1: keyword.declaration.purebasic
+        2: entity.name.interface.purebasic
+      push:
+        - meta_scope: meta.interface.purebasic
+        - include: basics
+        - match: \bEndInterface\b
+          pop: true
+    
     - include: basics
 
 # Forward Declarations - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

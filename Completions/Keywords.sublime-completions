@@ -157,6 +157,11 @@
             "kind": "keyword"
         },
         {
+            "trigger": "EndInterface",
+            "contents": "EndInterface",
+            "kind": "keyword"
+        },
+        {
             "trigger": "EndMacro",
             "contents": "EndMacro",
             "kind": "keyword"
@@ -234,6 +239,11 @@
         {
             "trigger": "IncludeFile",
             "contents": "IncludeFile",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Interface",
+            "contents": "Interface",
             "kind": "keyword"
         },
         {

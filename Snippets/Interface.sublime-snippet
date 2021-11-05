@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>Interface</tabTrigger>
+    <content><![CDATA[Interface ${1:InterfaceName}
+    $0
+EndInterface]]></content>
+    <description>interface definition block</description>
+</snippet>
