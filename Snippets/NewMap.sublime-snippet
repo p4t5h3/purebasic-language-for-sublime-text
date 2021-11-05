@@ -1,0 +1,6 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>NewMap</tabTrigger>
+    <content><![CDATA[NewMap ${1:MapName}(${2:Slots})$0]]></content>
+    <description>map declaration</description>
+</snippet>

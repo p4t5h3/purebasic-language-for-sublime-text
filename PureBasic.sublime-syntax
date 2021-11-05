@@ -6,6 +6,9 @@ file_extensions:
   - pbi
 scope: source.purebasic
 contexts:
+
+# Included Basic Building Blocks - - - - - - - - - - - - - - - - - - - - - - -
+
   basics:
     - match: ';'
       scope: punctuation.definition.comment.purebasic
@@ -74,6 +77,8 @@ contexts:
           scope: punctuation.section.parens.end.purebasic
           pop: true
 
+# Root - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
   main:
     - match: ^\s*(Define)((\.)(\w+))?\s+
       captures:
@@ -104,7 +109,6 @@ contexts:
           scope: punctuation.section.parens.end.purebasic
           pop: true
 
-
     - match: \b(NewList)\s+(\w+)((\.)(\w+))?(\()(\))
       captures:
         1: keyword.declaration.purebasic
@@ -113,6 +117,16 @@ contexts:
         5: meta.function.return-type.purebasic storage.type.purebasic
         6: punctuation.section.parens.begin.purebasic
         7: punctuation.section.parens.end.purebasic
+
+    - match: \b(NewMap)\s+(\w+)((\.)(\w+))?(\()(\d+)?(\))
+      captures:
+        1: keyword.declaration.purebasic
+        2: entity.name.function.purebasic
+        4: punctuation.separator.purebasic
+        5: meta.function.return-type.purebasic storage.type.purebasic
+        6: punctuation.section.parens.begin.purebasic
+        7: constant.numeric.purebasic
+        8: punctuation.section.parens.end.purebasic
 
     - match: \b(Interface)\s+(\w+)\b
       captures:

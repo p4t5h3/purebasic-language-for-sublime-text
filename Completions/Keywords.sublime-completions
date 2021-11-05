@@ -262,6 +262,11 @@
             "kind": "keyword"
         },
         {
+            "trigger": "NewMap",
+            "contents": "NewMap",
+            "kind": "keyword"
+        },
+        {
             "trigger": "Next",
             "contents": "Next",
             "kind": "keyword"
