@@ -97,6 +97,16 @@
             "kind": "keyword"
         },
         {
+            "trigger": "Define",
+            "contents": "Define $0",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Dim",
+            "contents": "Dim $0",
+            "kind": "keyword"
+        },
+        {
             "trigger": "Else",
             "contents": "Else",
             "kind": "keyword"
@@ -274,6 +284,11 @@
         {
             "trigger": "Protected",
             "contents": "Protected",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "ReDim",
+            "contents": "ReDim",
             "kind": "keyword"
         },
         {
