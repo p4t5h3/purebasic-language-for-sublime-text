@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.purebasic</scope>
+    <tabTrigger>EnumerationBinary</tabTrigger>
+    <content><![CDATA[EnumerationBinary ${1:BinaryEnumerationName}
+    $0
+EndEnumeration]]></content>
+    <description>binary enumeration block</description>
+</snippet>

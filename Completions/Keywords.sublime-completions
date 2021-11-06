@@ -197,6 +197,11 @@
             "kind": "keyword"
         },
         {
+            "trigger": "EnumerationBinary",
+            "contents": "EnumerationBinary",
+            "kind": "keyword"
+        },
+        {
             "trigger": "Extends",
             "contents": "Extends",
             "kind": "keyword"

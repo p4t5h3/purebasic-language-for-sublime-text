@@ -50,7 +50,7 @@ contexts:
     - match: '='
       scope: keyword.assignment.purebasic
 
-    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|List|Enumeration|EndEnumeration|EndInterface|Macro|EndMacro|DataSection|EndDataSection|EndWith|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|Swap|With|UseModule|UnuseModule)\b'
+    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|List|EndInterface|Macro|EndMacro|DataSection|EndDataSection|EndWith|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|Swap|With|UseModule|UnuseModule|Step)\b'
       scope: keyword.other.purebasic
 
     - match: '\b(Global|Protected|Static)\b'
@@ -93,6 +93,17 @@ contexts:
             3: punctuation.separator.purebasic
             4: storage.type.purebasic
         - match: '$'
+          pop: true
+
+    - match: \b(Enumeration|EnumerationBinary)\s+(\d+)?(\w+)?
+      captures:
+        1: keyword.declaration.enum.purebasic
+        2: constant.numeric.purebasic
+        3: entity.name.enum.purebasic
+      push:
+        - include: basics
+        - match: \bEndEnumeration\b
+          scope: keyword.other.purebasic
           pop: true
 
     - match: \b((Re)?Dim)\s+(\w+)((\.)(\w+))?(\()
