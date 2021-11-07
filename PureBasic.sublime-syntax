@@ -50,7 +50,7 @@ contexts:
     - match: '='
       scope: keyword.assignment.purebasic
 
-    - match: '\b(CompilerSelect|CompilerIf|CompilerElse|CompilerError|CompilerWarning|CompilerEndIf|CompilerSelect|CompilerCase|CompilerDefault|CompilerEndSelect|Debug|EnableASM|EnableExplicit|List|EndInterface|Macro|EndMacro|DataSection|EndDataSection|EndWith|ProcedureReturn|Structure|Extends|EndStructure|IncludeFile|XIncludeFile|DeclareModule|EndDeclareModule|Module|EndModule|Swap|With|UseModule|UnuseModule|Step)\b'
+    - match: '\b(CompilerCase|CompilerDefault|CompilerElse|CompilerEndIf|CompilerEndSelect|CompilerError|CompilerIf|CompilerSelect|CompilerSelect|CompilerWarning|DataSection|Debug|DeclareModule|EnableASM|EnableExplicit|EndDataSection|EndDeclareModule|EndInterface|EndMacro|EndModule|EndStructure|EndWith|Extends|IncludeFile|List|Macro|Module|ProcedureReturn|Step|Swap|UnuseModule|UseModule|With|XIncludeFile)\b'
       scope: keyword.other.purebasic
 
     - match: '\b(Global|Protected|Static)\b'
@@ -148,6 +148,31 @@ contexts:
         - include: basics
         - match: \bEndInterface\b
           pop: true
+
+    - match: \b(Structure)\s+(\w+)(\s*(Extends)\s+(\w+))?\b
+      captures:
+        1: keyword.declaration.struct.purebasic
+        2: entity.name.struct.purebasic
+        4: keyword.other.purebasic
+        5: entity.name.struct.purebasic
+      push: # Member List
+        - meta_scope: meta.struct.purebasic
+
+        - match: \bEndStructure\b
+          scope: keyword.other.purebasic
+          pop: true
+
+        - match: \b(End)?StructureUnion\b
+          scope: keyword.other.purebasic
+
+        - match: ((Array|List)\s+)?(\w+)((\.)(\w+))?
+          captures:
+            2: keyword.other.purebasic
+            3: variable.other.member.purebasic
+            5: punctuation.separator.purebasic
+            6: storage.type.purebasic
+
+        - include: basics
     
     - include: basics
 
