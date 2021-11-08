@@ -1,5 +1,7 @@
 ; SYNTAX TEST "Packages/User/purebasic-language-for-sublime-text/PureBasic.sublime-syntax"
 
+EnableExplicit
+
 Define WithoutTypeOrValue
 ; <- keyword.declaration.purebasic
 ;^^^^^ keyword.declaration.purebasic
@@ -12,20 +14,20 @@ Define.i WithTypeButWithoutValue
 ;      ^ storage.type.purebasic
 ;        ^^^^^^^^^^^^^^^^^^ variable.other.purebasic
 
-Define With.i, Different.s, Types.w
+Define W.i, Different.s, Types.w
 ; <- keyword.declaration.purebasic
 ;^^^^^ keyword.declaration.purebasic
-;      ^^^^ variable.other.purebasic
-;          ^ punctuation.separator.purebasic
-;           ^ storage.type.purebasic
-;            ^ punctuation.separator.purebasic
-;              ^^^^^^^^^ variable.other.purebasic
-;                       ^ punctuation.separator.purebasic
-;                        ^ storage.type.purebasic
-;                         ^ punctuation.separator.purebasic
-;                           ^^^^^ variable.other.purebasic
-;                                ^ punctuation.separator.purebasic
-;                                 ^ storage.type.purebasic
+;      ^ variable.other.purebasic
+;       ^ punctuation.separator.purebasic
+;        ^ storage.type.purebasic
+;         ^ punctuation.separator.purebasic
+;           ^^^^^^^^^ variable.other.purebasic
+;                    ^ punctuation.separator.purebasic
+;                     ^ storage.type.purebasic
+;                      ^ punctuation.separator.purebasic
+;                        ^^^^^ variable.other.purebasic
+;                             ^ punctuation.separator.purebasic
+;                              ^ storage.type.purebasic
 
 Define.s a1 = "a1", a2 = "a2", a3 = "a3"
 ; <- keyword.declaration.purebasic

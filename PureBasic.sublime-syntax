@@ -1,22 +1,170 @@
 %YAML 1.2
 ---
-# See http://www.sublimetext.com/docs/syntax.html
 file_extensions:
   - pb
   - pbi
 scope: source.purebasic
 contexts:
+  calls:
+    - match: '\b(\w+)(\()'
+      captures:
+        1: variable.function.purebasic
+        2: punctuation.section.parens.begin.purebasic
+      push:
+        - meta_scope: meta.function-call.purebasic
+        - match: '\)'
+          scope: punctuation.section.parens.end.purebasic
+          pop: true
 
-# Included Basic Building Blocks - - - - - - - - - - - - - - - - - - - - - - -
-
-  basics:
+  comments:
     - match: ';'
       scope: punctuation.definition.comment.purebasic
       push:
         - meta_scope: comment.line.purebasic
-        - match: $
+        - match: '$'
           pop: true
 
+  declarations:
+    - match: '\b(?i:(Enumeration|EnumerationBinary))\s+(\D\w*)?'
+      captures:
+        1: keyword.declaration.enum.purebasic
+        2: entity.name.enum.purebasic
+      push:
+        - include: terminators
+        - include: literals
+        - include: keywords
+        - include: types
+        - include: punctuation
+        - include: variables
+
+    - match: '\b(?i:(Declare|DeclareCDLL|DeclareDLL)(\s*(\.)\s*(\w+))?\s+(\w+))\b'
+      captures:
+        1: keyword.declaration.function.purebasic
+        3: punctuation.separator.purebasic
+        4: meta.function.return-type.purebasic storage.type.purebasic
+        5: entity.name.function.forward-decl.purebasic
+
+    - match: '\b(?i:Define)\b'
+      scope: keyword.declaration.purebasic
+      push:
+        - include: terminators
+        - include: literals
+        - include: keywords
+        - include: types
+        - include: punctuation
+        - include: variables
+
+    - match: '\b(?i:(Dim|NewList|NewMap|ReDim))\s+(\w+)\b'
+      captures:
+        1: keyword.declaration.purebasic
+        2: entity.name.function.purebasic
+      push:
+        - include: terminators
+        - include: literals
+        - include: keywords
+        - include: types
+        - include: punctuation
+        - include: variables
+
+    - match: '\b(?i:Global|Protected|Shared|Static)\b'
+      scope: storage.modifier.purebasic
+      push:
+        - include: terminators
+        - include: literals
+        - include: keywords
+        - include: types
+        - include: punctuation
+        - include: variables
+
+    - match: '\b(?i:(DeclareModule|Module)\s+(\w+))\b'
+      captures:
+        1: keyword.declaration.purebasic
+        2: entity.name.namespace.purebasic
+      push:
+        - meta_scope: meta.namespace.purebasic
+        - match: '\b(?i:EndDeclareModule|EndModule)\b'
+          scope: keyword.other.purebasic
+          pop: true
+        - include: comments
+        - include: literals
+        - include: declarations
+        - include: keywords
+        - include: types
+        - include: punctuation
+        - include: variables
+
+    - match: '\b(?i:(Procedure|ProcedureC|ProcedureCDLL|ProcedureDLL)(\s*(\.)\s*(\w+))?\s+(\w+))\b'
+      captures:
+        1: keyword.declaration.function.purebasic
+        3: punctuation.separator.purebasic
+        4: meta.function.return-type.purebasic storage.type.purebasic
+        5: entity.name.function.purebasic
+      push:
+        - meta_scope: meta.function.purebasic
+        - match: '\bEndProcedure\b'
+          scope: keyword.other.purebasic
+          pop: true
+        - include: comments
+        - include: literals
+        - include: declarations
+        - include: keywords
+        - include: types
+        - include: punctuation
+        - include: variables
+
+    - match: '\b(?i:(Structure)\s+(\w+)(\s+(Extends)\s+(\w+))?)\b'
+      captures:
+        1: keyword.declaration.struct.purebasic
+        2: entity.name.struct.purebasic
+        4: keyword.other.purebasic
+        5: entity.name.struct.purebasic
+      push:
+        - include: comments
+        - include: literals
+        - match: '\bEndStructure\b'
+          scope: keyword.other.purebasic
+          pop: true
+        #
+        # "StructureUnion" blocks can only appear inside "Structure" definitions.
+        #
+        - match: '\b(?i:StructureUnion|EndStructureUnion)\b'
+          scope: keyword.other.purebasic
+        #
+        # The "Array" and "List" keywords only appear in structure definitions.
+        # They must be matched before the generic variable pattern gets them.
+        #
+        - match: '\b(?i:Array|List)\b'
+          scope: keyword.declaration.purebasic
+        #
+        # Generic member names. At least in this case it is easy to include the asterisk of pointers.
+        #
+        - match: '(\*)?(\w+)(\$)?'
+          captures:
+            1: variable.other.member.purebasic punctuation.definition.variable.purebasic
+            2: variable.other.member.purebasic
+            3: variable.other.member.purebasic punctuation.definition.variable.purebasic
+        - include: keywords
+        - include: types
+        - include: punctuation
+
+  main:
+    - include: comments
+    - include: literals
+    - include: declarations
+    - include: keywords
+    - include: types
+    - include: punctuation
+    - include: calls
+    - include: labels
+    - include: variables
+
+  labels:
+    - match: '\b((\w+)(:))\s*$'
+      captures:
+        2: entity.name.label.purebasic
+        3: punctuation.separator.purebasic
+
+  literals:
     - match: '"'
       scope: punctuation.definition.string.begin.purebasic
       push: 
@@ -25,196 +173,79 @@ contexts:
           scope: punctuation.definition.string.end.purebasic
           pop: true
 
-    - match: ','
-      scope: punctuation.separator.purebasic
-
-    - match: '\b(Break|Case|Continue|Default|Else|End|EndIf|EndSelect|ElseIf|Else|FakeReturn|For|ForEach|Forever|Gosub|Goto|If|Next|Repeat|Select|To|Until|Wend|While)\b'
-      scope: keyword.control.purebasic
-
-    - match: '\b(And|Not|Or|XOr)\b'
-      scope: keyword.logical.purebasic
-
-      # Integers, floating point numbers and exponential expressions.
-    - match: \-?\d+(\.\d+)?(e\-\d+)?
+    - match: '\-?\d+(\.\d+)?(e\-\d+)?'
       scope: constant.numeric.purebasic
-      
+
+  keywords:
     - match: '\+|-|\*|/|%|<<|>>'
       scope: keyword.operator.arithmetic.purebasic
 
     - match: '&|\||!|~'
       scope: keyword.operator.bitwise.purebasic
 
-    - match: '(<|>|<>|<=|>=)'
+    - match: '<|>|<>|<=|>='
       scope: keyword.comparison.purebasic
 
     - match: '='
       scope: keyword.assignment.purebasic
 
-    - match: '\b(CompilerCase|CompilerDefault|CompilerElse|CompilerEndIf|CompilerEndSelect|CompilerError|CompilerIf|CompilerSelect|CompilerSelect|CompilerWarning|DataSection|Debug|DeclareModule|EnableASM|EnableExplicit|EndDataSection|EndDeclareModule|EndInterface|EndMacro|EndModule|EndStructure|EndWith|Extends|IncludeFile|List|Macro|Module|ProcedureReturn|Step|Swap|UnuseModule|UseModule|With|XIncludeFile)\b'
+    - match: '\b(?i:Break|Case|Continue|Default|Else|End|EndIf|EndSelect|ElseIf|Else|FakeReturn|For|ForEach|Forever|Gosub|Goto|If|Next|Repeat|Select|To|Until|Wend|While)\b'
+      scope: keyword.control.purebasic
+
+    - match: '\b(?i:And|Not|Or|XOr)\b'
+      scope: keyword.logical.purebasic
+
+    - match: '\b(?i:Interface)\b'
+      scope: keyword.declaration.purebasic
+
+    - match: '\b(?i:CompilerCase|CompilerDefault|CompilerElse|CompilerEndIf|CompilerEndSelect|CompilerError|CompilerIf|CompilerSelect|CompilerWarning|DataSection|Debug|EnableASM|EnableExplicit|EndDataSection|EndEnumeration|EndInterface|EndMacro|EndWith|Extends|IncludeFile|Macro|Module|ProcedureReturn|Step|Swap|UnuseModule|UseModule|With|XIncludeFile)\b'
       scope: keyword.other.purebasic
 
-    - match: '\b(Global|Protected|Static)\b'
-      scope: storage.modifier.purebasic
+  punctuation:
+    - match: ','
+      scope: punctuation.separator.purebasic
 
-      # Constants defined by PureBasic. This needs to be expanded. Just a stub for now.
-    - match: '#(True|False)\b'
-      scope: support.constant.purebasic
-
-      # Constants defined by the user.
-    - match: '#([\w_]+)\b'
-      scope: variable.other.constant.purebasic
-
-# Calls  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    - match: \b(\w+)(\()
-      captures:
-        1: entity.name.function.purebasic
-        2: punctuation.section.parens.begin.purebasic
-      push:
-        - meta_scope: meta.function-call.purebasic
-        - include: basics
-        - match: \)
-          scope: punctuation.section.parens.end.purebasic
-          pop: true
-
-# Root - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-  main:
-    - match: ^\s*(Define)((\.)(\w+))?\s+
-      captures:
-        1: keyword.declaration.purebasic
-        3: punctuation.separator.purebasic
-        4: storage.type.purebasic
-      push:
-        - include: basics
-        - match: \b(\w+)((\.)(\w+))?\b
-          captures:
-            1: variable.other.purebasic
-            3: punctuation.separator.purebasic
-            4: storage.type.purebasic
-        - match: '$'
-          pop: true
-
-    - match: \b(Enumeration|EnumerationBinary)\s+(\d+)?(\w+)?
-      captures:
-        1: keyword.declaration.enum.purebasic
-        2: constant.numeric.purebasic
-        3: entity.name.enum.purebasic
-      push:
-        - include: basics
-        - match: \bEndEnumeration\b
-          scope: keyword.other.purebasic
-          pop: true
-
-    - match: \b((Re)?Dim)\s+(\w+)((\.)(\w+))?(\()
-      captures:
-        1: keyword.declaration.purebasic
-        3: entity.name.function.purebasic
-        5: punctuation.separator.purebasic
-        6: storage.type.purebasic
-        7: punctuation.section.parens.begin.purebasic
-        8: punctuation.section.parens.end.purebasic
-      push:
-        - include: basics
-        - match: \)
-          scope: punctuation.section.parens.end.purebasic
-          pop: true
-
-    - match: \b(NewList)\s+(\w+)((\.)(\w+))?(\()(\))
-      captures:
-        1: keyword.declaration.purebasic
-        2: entity.name.function.purebasic
-        4: punctuation.separator.purebasic
-        5: meta.function.return-type.purebasic storage.type.purebasic
-        6: punctuation.section.parens.begin.purebasic
-        7: punctuation.section.parens.end.purebasic
-
-    - match: \b(NewMap)\s+(\w+)((\.)(\w+))?(\()(\d+)?(\))
-      captures:
-        1: keyword.declaration.purebasic
-        2: entity.name.function.purebasic
-        4: punctuation.separator.purebasic
-        5: meta.function.return-type.purebasic storage.type.purebasic
-        6: punctuation.section.parens.begin.purebasic
-        7: constant.numeric.purebasic
-        8: punctuation.section.parens.end.purebasic
-
-    - match: \b(Interface)\s+(\w+)\b
-      captures:
-        1: keyword.declaration.purebasic
-        2: entity.name.interface.purebasic
-      push:
-        - meta_scope: meta.interface.purebasic
-        - include: basics
-        - match: \bEndInterface\b
-          pop: true
-
-    - match: \b(Structure)\s+(\w+)(\s*(Extends)\s+(\w+))?\b
-      captures:
-        1: keyword.declaration.struct.purebasic
-        2: entity.name.struct.purebasic
-        4: keyword.other.purebasic
-        5: entity.name.struct.purebasic
-      push: # Member List
-        - meta_scope: meta.struct.purebasic
-
-        - match: \bEndStructure\b
-          scope: keyword.other.purebasic
-          pop: true
-
-        - match: \b(End)?StructureUnion\b
-          scope: keyword.other.purebasic
-
-        - match: ((Array|List)\s+)?(\w+)((\.)(\w+))?
-          captures:
-            2: keyword.other.purebasic
-            3: variable.other.member.purebasic
-            5: punctuation.separator.purebasic
-            6: storage.type.purebasic
-
-        - include: basics
-    
-    - include: basics
-
-# Forward Declarations - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-    - match: \b(Declare|DeclareCDLL|DeclareDLL)((\.)(\w+))?\s+(\w+)(\()
-      captures:
-        1: keyword.declaration.function.purebasic
-        3: punctuation.separator.purebasic
-        4: meta.function.return-type.purebasic storage.type.purebasic
-        5: entity.name.function.forward-decl.purebasic
-        6: punctuation.section.parens.begin.purebasic
-      push:
-        - meta_content_scope: meta.function.parameters.purebasic
-        - include: basics
-        - match: \)
-          scope: punctuation.section.parens.end.purebasic
-          pop: true
-
-# Procedures - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-    - match: \b(Procedure|ProcedureC|ProcedureCDLL|ProcedureDLL)((\.)(\w+))?\s+(\w+)
-      captures:
-        1: keyword.declaration.function.purebasic
-        3: punctuation.separator.purebasic
-        4: meta.function.return-type.purebasic storage.type.purebasic
-        5: entity.name.function.purebasic
-      push: procedure_implementation
-
-  procedure_implementation:
-    - meta_scope: meta.function.purebasic
-    - include: main
-    - match: \(
+    - match: '\('
       scope: punctuation.section.parens.begin.purebasic
-      set: procedure_implementation_parameters
-    - match: \bEndProcedure\b
-      scope: keyword.other.purebasic
+
+    - match: '\)'
+      scope: punctuation.section.parens.end.purebasic
+
+    - match: '\['
+      scope: punctuation.section.brackets.begin.purebasic
+
+    - match: '\]'
+      scope: punctuation.section.brackets.end.purebasic
+
+    #
+    # Used for accessing members of a module.
+    #
+    - match: '::'
+      scope: punctuation.accessor.purebasic
+
+  #
+  # Commands in PureBasic are typically terminated by the end of the line.
+  # However there is also the possibility to concatenate multiple commands in one line by using ":".
+  #
+  terminators:
+    - match: ':'
+      scope: punctuation.separator.purebasic
+      pop: true
+    - match: '$'
       pop: true
 
-  procedure_implementation_parameters:
-    - meta_content_scope: meta.function.parameters.purebasic
-    - include: basics
-    - match: \)
-      scope: punctuation.section.parens.end.purebasic
-      set: procedure_implementation
+  types:
+    - match: (\.)\s*(\w+)
+      captures:
+        1: punctuation.separator.purebasic
+        2: storage.type.purebasic
+
+  variables:
+    - match: '(\@)?(\w+)(\$)?'
+      captures:
+        1: variable.other.purebasic punctuation.definition.variable.purebasic
+        2: variable.other.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
+
+    - match: '#([\w_]+)\b'
+      scope: variable.other.constant.purebasic

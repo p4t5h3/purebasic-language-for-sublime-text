@@ -16,6 +16,10 @@ In example: you can quickly navigate to procedure implementations because Sublim
 
 If you stumble across unrecognized keywords or other expressions, then please file an issue in [the issue tracker](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues).
 
+## Symbol List
+
+Important entities like procedures or structures are listed Sublime Text's symbol list for quick navigation.
+
 ## Completions
 
 The package ships [snippets](https://www.sublimetext.com/docs/completions.html) for regularly used constructs like conditional clauses or procedure implementations.
@@ -56,8 +60,7 @@ Sublime Text is much faster and efficient, especially with large files.
 
 ## Contributing
 
-Please visit [the GitHub issue tracker](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues) of this project.
-Every bug report, enhancement suggestion or pull request is welcome.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for further information.
 
 ## License
 

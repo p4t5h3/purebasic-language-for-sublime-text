@@ -36,7 +36,3 @@ EnumerationBinary BinaryEnumerationName
 EndEnumeration
 ; <- keyword.other.purebasic
 ;^^^^^^^^^^^^^ keyword.other.purebasic
-; IDE Options = PureBasic 5.73 LTS (MacOS X - x64)
-; CursorPosition = 23
-; FirstLine = 5
-; EnableXP

@@ -53,7 +53,7 @@ Structure WithList
 ;      ^ punctuation.separator.purebasic
 ;       ^ storage.type.purebasic
     List Friends$()
-;   ^^^^ keyword.other.purebasic
+;   ^^^^ keyword.declaration.purebasic
 ;        ^^^^^^^^ variable.other.member.purebasic
 ;               ^ punctuation.definition.variable.purebasic
 ;                ^ punctuation.section.parens.begin.purebasic
@@ -78,7 +78,7 @@ Structure WithArray
 ;       ^ constant.numeric.purebasic
 ;        ^ punctuation.section.brackets.end
     Array c.l(3,3)
-;   ^^^^^ keyword.other.purebasic
+;   ^^^^^ keyword.declaration.purebasic
 ;         ^ variable.other.member.purebasic
 ;          ^ punctuation.separator.purebasic
 ;           ^ storage.type.purebasic
@@ -112,7 +112,7 @@ EndStructure
 
 Structure Type
 ; <- keyword.declaration.struct.purebasic
-;^^^^^^^^ keyword.declaration.suct.purebasic
+;^^^^^^^^ keyword.declaration.struct.purebasic
 ;         ^^^^ entity.name.struct.purebasic
     Name$
 ;   ^^^^^ variable.other.member.purebasic
@@ -136,5 +136,3 @@ Structure Type
 EndStructure
 ; <- keyword.other.purebasic
 ;^^^^^^^^^^^ keyword.other.purebasic
-; IDE Options = PureBasic 5.73 LTS (MacOS X - x64)
-; EnableXP
