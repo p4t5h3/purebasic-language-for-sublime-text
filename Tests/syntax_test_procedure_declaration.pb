@@ -1,4 +1,4 @@
-; SYNTAX TEST "Packages/User/purebasic-language-for-sublime-text/PureBasic.sublime-syntax"
+; SYNTAX TEST "Packages/purebasic-language-for-sublime-text/PureBasic.sublime-syntax"
 
 Declare Minimum()
 ; <- keyword.declaration.function.purebasic
