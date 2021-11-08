@@ -54,6 +54,12 @@ Debug 2*eh
 ;      ^ keyword.operator.arithmetic.purebasic
 ;       ^^ variable.other.purebasic
 
+Debug Multiplication**In
+;     ^^^^^^^^^^^^^^ variable.other.purebasic
+;                   ^ keyword.operator.arithmetic.purebasic
+;                    ^ punctuation.definition.variable.purebasic
+;                    ^^^ variable.other.purebasic
+
 Debug Multiplication
 ;     ^^^^^^^^^^^^^^ variable.other.purebasic
 
