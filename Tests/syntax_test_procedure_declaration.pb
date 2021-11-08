@@ -35,7 +35,6 @@ Minimum()
 Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ; <- keyword.declaration.function.purebasic
 ;^^^^^^^^ keyword.declaration.function.purebasic
-;^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function.declaration.purebasic
 ;        ^ punctuation.separator.purebasic
 ;         ^ meta.function.return-type.purebasic storage.type.purebasic
 ;           ^^^^^^^^^^^ entity.name.function.purebasic
@@ -44,14 +43,14 @@ Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ;                       ^ punctuation.definition.variable
 ;                       ^^^^^ variable.parameter.purebasic
 ;                            ^ punctuation.separator.purebasic
-;                             ^^^^^^^^^^^^^ storage.type.struct.purebasic
+;                             ^^^^^^^^^^^^^ storage.type.purebasic
 ;                                          ^ punctuation.separator.purebasic
 ;                                            ^^^^^^^^^^ variable.parameter.purebasic
 ;                                                      ^ punctuation.separator.purebasic
-;                                                       ^ storage.type.bool.purebasic
+;                                                       ^ storage.type.purebasic
 ;                                                         ^ keyword.operator.assignment.purebasic
 ;                                                           ^ punctuation.definition.variable.purebasic
-;                                                           ^^^^^^ support.constant.purebasic
+;                                                           ^^^^^^ variable.other.constant.purebasic
 ;                                                                 ^ punctuation.section.parens.end.purebasic
     
 ; <- meta.function.purebasic

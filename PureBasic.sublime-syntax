@@ -4,6 +4,9 @@ file_extensions:
   - pb
   - pbi
 scope: source.purebasic
+variables:
+  opening_parens: '(\()(\*)?'
+  variables: '(\@)?(\w+)(\$)?'
 contexts:
   calls:
     - match: '\b(\w+)(\()'
@@ -15,6 +18,13 @@ contexts:
         - match: '\)'
           scope: punctuation.section.parens.end.purebasic
           pop: true
+        - include: literals
+        - include: keywords
+        - include: types
+        - include: punctuation
+        - include: calls
+        - include: variables
+        - include: constants
 
   comments:
     - match: ';'
@@ -36,6 +46,7 @@ contexts:
         - include: types
         - include: punctuation
         - include: variables
+        - include: constants
 
     - match: '\b(?i:(Declare|DeclareCDLL|DeclareDLL)(\s*(\.)\s*(\w+))?\s+(\w+))\b'
       captures:
@@ -53,6 +64,7 @@ contexts:
         - include: types
         - include: punctuation
         - include: variables
+        - include: constants
 
     - match: '\b(?i:(Dim|NewList|NewMap|ReDim))\s+(\w+)\b'
       captures:
@@ -65,6 +77,7 @@ contexts:
         - include: types
         - include: punctuation
         - include: variables
+        - include: constants
 
     - match: '\b(?i:Global|Protected|Shared|Static)\b'
       scope: storage.modifier.purebasic
@@ -75,6 +88,7 @@ contexts:
         - include: types
         - include: punctuation
         - include: variables
+        - include: constants
 
     - match: '\b(?i:(DeclareModule|Module)\s+(\w+))\b'
       captures:
@@ -92,6 +106,7 @@ contexts:
         - include: types
         - include: punctuation
         - include: variables
+        - include: constants
 
     - match: '\b(?i:(Procedure|ProcedureC|ProcedureCDLL|ProcedureDLL)(\s*(\.)\s*(\w+))?\s+(\w+))\b'
       captures:
@@ -99,18 +114,7 @@ contexts:
         3: punctuation.separator.purebasic
         4: meta.function.return-type.purebasic storage.type.purebasic
         5: entity.name.function.purebasic
-      push:
-        - meta_scope: meta.function.purebasic
-        - match: '\bEndProcedure\b'
-          scope: keyword.other.purebasic
-          pop: true
-        - include: comments
-        - include: literals
-        - include: declarations
-        - include: keywords
-        - include: types
-        - include: punctuation
-        - include: variables
+      push: procedures
 
     - match: '\b(?i:(Structure)\s+(\w+)(\s+(Extends)\s+(\w+))?)\b'
       captures:
@@ -157,6 +161,7 @@ contexts:
     - include: calls
     - include: labels
     - include: variables
+    - include: constants
 
   labels:
     - match: '\b((\w+)(:))\s*$'
@@ -187,7 +192,7 @@ contexts:
       scope: keyword.comparison.purebasic
 
     - match: '='
-      scope: keyword.assignment.purebasic
+      scope: keyword.operator.assignment.purebasic
 
     - match: '\b(?i:Break|Case|Continue|Default|Else|End|EndIf|EndSelect|ElseIf|Else|FakeReturn|For|ForEach|Forever|Gosub|Goto|If|Next|Repeat|Select|To|Until|Wend|While)\b'
       scope: keyword.control.purebasic
@@ -201,12 +206,53 @@ contexts:
     - match: '\b(?i:CompilerCase|CompilerDefault|CompilerElse|CompilerEndIf|CompilerEndSelect|CompilerError|CompilerIf|CompilerSelect|CompilerWarning|DataSection|Debug|EnableASM|EnableExplicit|EndDataSection|EndEnumeration|EndInterface|EndMacro|EndWith|Extends|IncludeFile|Macro|Module|ProcedureReturn|Step|Swap|UnuseModule|UseModule|With|XIncludeFile)\b'
       scope: keyword.other.purebasic
 
+  parameters:
+    - meta_scope: meta.function.parameters.purebasic
+    - match: '\)'
+      scope: punctuation.section.parens.end.purebasic
+      set: procedures
+    - include: literals
+    - include: keywords
+    - include: types
+    - include: punctuation
+    - include: calls
+    #
+    # Function parameters should have a dedicated scope according to the Sublime Text documentation.
+    #
+    - match: '{{variables}}'
+      captures:
+        1: variable.parameter.purebasic punctuation.definition.variable.purebasic
+        2: variable.parameter.purebasic
+        3: variable.parameter.purebasic punctuation.definition.variable.purebasic
+    - include: constants
+
+  procedures:
+    - meta_scope: meta.function.purebasic
+    - match: '{{opening_parens}}'
+      captures:
+        1: punctuation.section.parens.begin.purebasic
+        2: variable.parameter.purebasic punctuation.definition.variable
+      set: parameters
+    - match: '\bEndProcedure\b'
+      scope: keyword.other.purebasic
+      pop: true
+    - include: comments
+    - include: literals
+    - include: declarations
+    - include: keywords
+    - include: types
+    - include: punctuation
+    - include: variables
+    - include: constants
+
   punctuation:
     - match: ','
       scope: punctuation.separator.purebasic
 
-    - match: '\('
-      scope: punctuation.section.parens.begin.purebasic
+    - match: '{{opening_parens}}'
+      captures:
+        1: punctuation.section.parens.begin.purebasic
+        2: variable.other.purebasic punctuation.definition.variable
 
     - match: '\)'
       scope: punctuation.section.parens.end.purebasic
@@ -241,11 +287,14 @@ contexts:
         2: storage.type.purebasic
 
   variables:
-    - match: '(\@)?(\w+)(\$)?'
+    - match: '{{variables}}'
       captures:
         1: variable.other.purebasic punctuation.definition.variable.purebasic
         2: variable.other.purebasic
         3: variable.other.purebasic punctuation.definition.variable.purebasic
 
-    - match: '#([\w_]+)\b'
-      scope: variable.other.constant.purebasic
+  constants:
+    - match: '(#)([\w_]+)\b'
+      captures:
+        1: variable.other.constant.purebasic punctuation.definition.variable.purebasic
+        2: variable.other.constant.purebasic
