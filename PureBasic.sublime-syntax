@@ -5,6 +5,7 @@ file_extensions:
   - pbi
 scope: source.purebasic
 variables:
+  following_pointer: '(\s*(\*))?'
   opening_parens: '(\()(\*)?'
   variables: '(\@)?(\w+)(\$)?'
 contexts:
@@ -55,8 +56,10 @@ contexts:
         4: meta.function.return-type.purebasic storage.type.purebasic
         5: entity.name.function.forward-decl.purebasic
 
-    - match: '\b(?i:Define)\b'
-      scope: keyword.declaration.purebasic
+    - match: '\b(?i:(Define)){{following_pointer}}\b'
+      captures:
+        1: keyword.declaration.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
       push:
         - include: terminators
         - include: literals
@@ -182,8 +185,10 @@ contexts:
       scope: constant.numeric.purebasic
 
   keywords:
-    - match: '\+|-|\*|/|%|<<|>>'
-      scope: keyword.operator.arithmetic.purebasic
+    - match: '(\+|-|\*|/|%|<<|>>){{following_pointer}}'
+      captures:
+        1: keyword.operator.arithmetic.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
 
     - match: '&|\||!|~'
       scope: keyword.operator.bitwise.purebasic
@@ -203,8 +208,10 @@ contexts:
     - match: '\b(?i:Interface)\b'
       scope: keyword.declaration.purebasic
 
-    - match: '\b(?i:CompilerCase|CompilerDefault|CompilerElse|CompilerEndIf|CompilerEndSelect|CompilerError|CompilerIf|CompilerSelect|CompilerWarning|DataSection|Debug|EnableASM|EnableExplicit|EndDataSection|EndEnumeration|EndInterface|EndMacro|EndWith|Extends|IncludeFile|Macro|Module|ProcedureReturn|Step|Swap|UnuseModule|UseModule|With|XIncludeFile)\b'
-      scope: keyword.other.purebasic
+    - match: '\b(?i:(CompilerCase|CompilerDefault|CompilerElse|CompilerEndIf|CompilerEndSelect|CompilerError|CompilerIf|CompilerSelect|CompilerWarning|DataSection|Debug|EnableASM|EnableExplicit|EndDataSection|EndEnumeration|EndInterface|EndMacro|EndWith|Extends|IncludeFile|Macro|Module|ProcedureReturn|Step|Swap|UnuseModule|UseModule|With|XIncludeFile))\b{{following_pointer}}'
+      captures:
+        1: keyword.other.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
 
   parameters:
     - meta_scope: meta.function.parameters.purebasic
@@ -246,8 +253,10 @@ contexts:
     - include: constants
 
   punctuation:
-    - match: ','
-      scope: punctuation.separator.purebasic
+    - match: '(,){{following_pointer}}'
+      captures:
+        1: punctuation.separator.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
 
     - match: '{{opening_parens}}'
       captures:

@@ -23,9 +23,9 @@ Define Factor = 1
 Define Multiplication = 1, *In = 2, Definition = 2*Factor
 ;                          ^ punctuation.definition.variable
 ;                          ^^^ variable.other.purebasic
-;                                                ^^^^^^ variable.other.purebasic
-;                                                      ^ keyword.operator.arithmetic.purebasic
-;                                                       ^ constant.numeric.purebasic
+;                                                ^ constant.numeric.purebasic
+;                                                 ^ keyword.operator.arithmetic.purebasic
+;                                                  ^^^^^^ variable.other.purebasic
 
 Debug *eh
 ; <- keyword.other.purebasic
