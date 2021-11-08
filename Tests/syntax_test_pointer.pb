@@ -2,44 +2,90 @@
 
 EnableExplicit
 
-Global *eh = 0
-; <- storage.modifier.purebasic
-;^^^^^ storage.modifier.purebasic
-;      ^ punctuation.definition.variable
-;      ^^^ variable.other
-;          ^ keyword.operator.assignment.purebasic
-;            ^ constant.numeric.integer.purebasic
+Define On = 1 : Define The = 2 : Define Same = 3 : Define Line = 4
 
-Global eh = 1
-; <- storage.modifier.purebasic
-;^^^^^ storage.modifier.purebasic
-;      ^^ variable.other
+Define *eh = 0
+; <- keyword.declaration.purebasic
+;^^^^^ keyword.declaration.purebasic
+;      ^ punctuation.definition.variable
+;      ^^^ variable.other.purebasic
+;          ^ keyword.operator.assignment.purebasic
+;            ^ constant.numeric.purebasic
+
+Define eh = 1
+; <- keyword.declaration.purebasic
+;^^^^^ keyword.declaration.purebasic
+;      ^^ variable.other.purebasic
 ;         ^ keyword.operator.assignment.purebasic
-;           ^ constant.numeric.integer.purebasic
+;           ^ constant.numeric.purebasic
+
+Define Factor = 1
+Define Multiplication = 1, *In = 2, Definition = 2*Factor
+;                          ^ punctuation.definition.variable
+;                          ^^^ variable.other.purebasic
+;                                                ^^^^^^ variable.other.purebasic
+;                                                      ^ keyword.operator.arithmetic.purebasic
+;                                                       ^ constant.numeric.purebasic
 
 Debug *eh
 ; <- keyword.other.purebasic
 ;^^^^ keyword.other.purebasic
-;     ^ punctuation.definition.variable
-;     ^^^ variable.other
+;     ^ punctuation.definition.variable.purebasic
+;     ^^^ variable.other.purebasic
 
 Debug 2 *eh
 ; <- keyword.other.purebasic
 ;^^^^ keyword.other.purebasic
-;     ^ constant.numeric.integer.purebasic
+;     ^ constant.numeric.purebasic
 ;       ^ keyword.operator.arithmetic.purebasic
-;        ^^ variable.other
+;        ^^ variable.other.purebasic
 
 Debug 2 * eh
 ; <- keyword.other.purebasic
 ;^^^^ keyword.other.purebasic
 ;     ^ constant.numeric.purebasic
 ;       ^ keyword.operator.arithmetic.purebasic
-;         ^^ variable.other
+;         ^^ variable.other.purebasic
 
 Debug 2*eh
 ; <- keyword.other.purebasic
 ;^^^^ keyword.other.purebasic
 ;     ^ constant.numeric.purebasic
 ;      ^ keyword.operator.arithmetic.purebasic
-;       ^^ variable.other
+;       ^^ variable.other.purebasic
+
+Debug Multiplication
+;     ^^^^^^^^^^^^^^ variable.other.purebasic
+
+Debug *In
+;     ^ punctuation.definition.variable.purebasic
+;     ^^^ variable.other.purebasic
+
+Debug Definition
+;     ^^^^^^^^^^ variable.other.purebasic
+
+Debug @Multiplication
+;      ^^^^^^^^^^^^^^ variable.other.purebasic
+
+Structure MyStructure
+  SomeValue.i
+  *SomePointer
+; ^ punctuation.definition.variable.purebasic
+; ^^^^^^^^^^^^ variable.other.member.purebasic
+EndStructure
+
+Procedure.i CreateMyStructure()
+  ProcedureReturn AllocateMemory(SizeOf(MyStructure))
+EndProcedure
+
+Define *MyScreen.MyStructure = CreateMyStructure()
+;      ^ punctuation.definition.variable.purebasic
+;      ^^^^^^^^^ variable.other.purebasic
+
+Define *StringAddress = @"This is a string in memory"
+;      ^ punctuation.definition.variable.purebasic
+;      ^^^^^^^^^^^^^^ variable.other.purebasic
+; IDE Options = PureBasic 5.73 LTS (MacOS X - x64)
+; CursorPosition = 20
+; Folding = -
+; EnableXP

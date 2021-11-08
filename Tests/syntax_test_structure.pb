@@ -96,6 +96,7 @@ Structure WithPointer
 ;^^^^^^^^ keyword.declaration.struct.purebasic
 ;         ^^^^^^^^^^^ entity.name.struct.purebasic
     *Next.Person
+;   ^ punctuation.definition.variable.purebasic
 ;   ^^^^^ variable.other.member.purebasic
 ;        ^ punctuation.separator.purebasic
 ;         ^^^^^^ storage.type.purebasic
