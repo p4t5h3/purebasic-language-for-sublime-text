@@ -18,9 +18,9 @@ jobs:
       matrix:
         include:
           - build: latest  # This is the default
-            # packages: master  # If you depend on a default syntax definition
+            packages: false
           - build: 3210  # Latest known ST3 build with a test binary
-            # packages: st3
+            packages: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
