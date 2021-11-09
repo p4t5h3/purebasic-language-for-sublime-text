@@ -12,6 +12,11 @@
             "kind": "keyword"
         },
         {
+            "trigger": "CallDebugger",
+            "contents": "CallDebugger",
+            "kind": "keyword"
+        },
+        {
             "trigger": "Case",
             "contents": "Case",
             "kind": "keyword"
@@ -29,6 +34,11 @@
         {
             "trigger": "CompilerElse",
             "contents": "CompilerElse",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "CompilerElseIf",
+            "contents": "CompilerElseIf",
             "kind": "keyword"
         },
         {
@@ -72,6 +82,11 @@
             "kind": "keyword"
         },
         {
+            "trigger": "Data",
+            "contents": "Data",
+            "kind": "keyword"
+        },
+        {
             "trigger": "DataSection",
             "contents": "DataSection",
             "kind": "keyword"
@@ -79,6 +94,11 @@
         {
             "trigger": "Debug",
             "contents": "Debug",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "DebugLevel",
+            "contents": "DebugLevel",
             "kind": "keyword"
         },
         {
@@ -107,6 +127,21 @@
             "kind": "keyword"
         },
         {
+            "trigger": "DisableASM",
+            "contents": "DisableASM",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "DisableDebugger",
+            "contents": "DisableDebugger",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "DisableExplicit",
+            "contents": "DisableExplicit",
+            "kind": "keyword"
+        },
+        {
             "trigger": "Else",
             "contents": "Else",
             "kind": "keyword"
@@ -124,6 +159,11 @@
         {
             "trigger": "EnableASM",
             "contents": "EnableASM",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EnableDebugger",
+            "contents": "EnableDebugger",
             "kind": "keyword"
         },
         {
@@ -154,6 +194,11 @@
         {
             "trigger": "EndIf",
             "contents": "EndIf",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "EndImport",
+            "contents": "EndImport",
             "kind": "keyword"
         },
         {
@@ -252,8 +297,18 @@
             "kind": "keyword"
         },
         {
+            "trigger": "Import",
+            "contents": "Import",
+            "kind": "keyword"
+        },
+        {
             "trigger": "IncludeFile",
             "contents": "IncludeFile",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "IncludePath",
+            "contents": "IncludePath",
             "kind": "keyword"
         },
         {
@@ -264,6 +319,11 @@
         {
             "trigger": "Macro",
             "contents": "Macro",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "MacroExpandedCount",
+            "contents": "MacroExpandedCount",
             "kind": "keyword"
         },
         {
@@ -317,6 +377,16 @@
             "kind": "keyword"
         },
         {
+            "trigger": "Prototype",
+            "contents": "Prototype",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Read",
+            "contents": "Read",
+            "kind": "keyword"
+        },
+        {
             "trigger": "ReDim",
             "contents": "ReDim",
             "kind": "keyword"
@@ -324,6 +394,16 @@
         {
             "trigger": "Repeat",
             "contents": "Repeat",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Restore",
+            "contents": "Restore",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Runtime",
+            "contents": "Runtime",
             "kind": "keyword"
         },
         {
@@ -352,6 +432,11 @@
             "kind": "keyword"
         },
         {
+            "trigger": "Threaded",
+            "contents": "Threaded",
+            "kind": "keyword"
+        },
+        {
             "trigger": "To",
             "contents": "To",
             "kind": "keyword"
@@ -364,6 +449,11 @@
         {
             "trigger": "With",
             "contents": "With",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "UndefineMacro",
+            "contents": "UndefineMacro",
             "kind": "keyword"
         },
         {

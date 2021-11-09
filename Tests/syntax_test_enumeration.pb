@@ -3,8 +3,8 @@
 EnableExplicit
 
 Enumeration EnumerationName
-; <- keyword.declaration.enum.purebasic
-;^^^^^^^^^^ keyword.declaration.enum.purebasic
+; <- storage.type.enum keyword.declaration.enum.purebasic
+;^^^^^^^^^^ storage.type.enum keyword.declaration.enum.purebasic
 ;           ^^^^^^^^^^^^^^^ entity.name.enum.purebasic
     #One
     #Two
@@ -14,8 +14,8 @@ EndEnumeration
 ;^^^^^^^^^^^^^ keyword.other.purebasic
 
 Enumeration 10 Step 2
-; <- keyword.declaration.enum.purebasic
-;^^^^^^^^^^ keyword.declaration.enum.purebasic
+; <- storage.type.enum keyword.declaration.enum.purebasic
+;^^^^^^^^^^ storage.type.enum keyword.declaration.enum.purebasic
 ;           ^^ constant.numeric.purebasic
 ;              ^^^^ keyword.other.purebasic
 ;                   ^ constant.numeric.purebasic
@@ -27,8 +27,8 @@ EndEnumeration
 ;^^^^^^^^^^^^^ keyword.other.purebasic
 
 EnumerationBinary BinaryEnumerationName
-; <- keyword.declaration.enum.purebasic
-;^^^^^^^^^^^^^^^^ keyword.declaration.enum.purebasic
+; <- storage.type.enum keyword.declaration.enum.purebasic
+;^^^^^^^^^^^^^^^^ storage.type.enum keyword.declaration.enum.purebasic
 ;                 ^^^^^^^^^^^^^^^^^^^^^ entity.name.enum.purebasic
   #Constant11
   #Constant2

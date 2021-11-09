@@ -7,6 +7,7 @@ scope: source.purebasic
 variables:
   following_pointer: '(\s*(\*))?'
   opening_parens: '(\()(\*)?'
+  return_type: '(\s*(\.)\s*(\w+))?'
   variables: '(\@)?(\w+)(\$)?'
 contexts:
   calls:
@@ -38,7 +39,7 @@ contexts:
   declarations:
     - match: '\b(?i:(Enumeration|EnumerationBinary))\s+(\D\w*)?'
       captures:
-        1: keyword.declaration.enum.purebasic
+        1: storage.type.enum.purebasic keyword.declaration.enum.purebasic
         2: entity.name.enum.purebasic
       push:
         - include: terminators
@@ -49,12 +50,13 @@ contexts:
         - include: variables
         - include: constants
 
-    - match: '\b(?i:(Declare|DeclareCDLL|DeclareDLL)(\s*(\.)\s*(\w+))?\s+(\w+))\b'
+    - match: '\b(?i:(Declare|DeclareCDLL|DeclareDLL|Prototype))(\s*(\.)\s*(\w+))?\s+(\w+)'
       captures:
-        1: keyword.declaration.function.purebasic
+        1: storage.type.function.purebasic keyword.declaration.function.purebasic
         3: punctuation.separator.purebasic
         4: meta.function.return-type.purebasic storage.type.purebasic
         5: entity.name.function.forward-decl.purebasic
+      push: parameters
 
     - match: '\b(?i:(Define)){{following_pointer}}\b'
       captures:
@@ -82,7 +84,7 @@ contexts:
         - include: variables
         - include: constants
 
-    - match: '\b(?i:Global|Protected|Shared|Static)\b'
+    - match: '\b(?i:Global|Protected|Runtime|Shared|Static|Threaded)\b'
       scope: storage.modifier.purebasic
       push:
         - include: terminators
@@ -111,17 +113,50 @@ contexts:
         - include: variables
         - include: constants
 
-    - match: '\b(?i:(Procedure|ProcedureC|ProcedureCDLL|ProcedureDLL)(\s*(\.)\s*(\w+))?\s+(\w+))\b'
+    - match: '\b(?i:(Procedure|ProcedureC|ProcedureCDLL|ProcedureDLL){{return_type}}\s+(\w+))\b'
       captures:
-        1: keyword.declaration.function.purebasic
+        1: storage.type.function.purebasic keyword.declaration.function.purebasic
         3: punctuation.separator.purebasic
         4: meta.function.return-type.purebasic storage.type.purebasic
         5: entity.name.function.purebasic
       push: procedures
 
+    - match: '\b(?i:(Import))\b'
+      captures:
+        1: keyword.control.import.purebasic
+      push:
+        - include: comments
+        - include: literals
+        - match: '\bEndImport\b'
+          scope: keyword.control.import.purebasic
+          pop: true
+        - include: parameter_keywords
+        - include: members
+        - include: keywords
+        - include: types
+        - include: punctuation
+
+    - match: '\b(?i:(Interface)\s+(\w+)(\s+(Extends)\s+(\w+))?)\b'
+      captures:
+        1: storage.type.interface.purebasic keyword.declaration.interface.purebasic
+        2: entity.name.interface.purebasic
+        4: keyword.other.purebasic
+        5: entity.name.interface.purebasic
+      push:
+        - include: comments
+        - include: literals
+        - match: '\bEndInterface\b'
+          scope: keyword.other.purebasic
+          pop: true
+        - include: parameter_keywords
+        - include: members
+        - include: keywords
+        - include: types
+        - include: punctuation
+
     - match: '\b(?i:(Structure)\s+(\w+)(\s+(Extends)\s+(\w+))?)\b'
       captures:
-        1: keyword.declaration.struct.purebasic
+        1: storage.type.struct.purebasic keyword.declaration.struct.purebasic
         2: entity.name.struct.purebasic
         4: keyword.other.purebasic
         5: entity.name.struct.purebasic
@@ -136,20 +171,8 @@ contexts:
         #
         - match: '\b(?i:StructureUnion|EndStructureUnion)\b'
           scope: keyword.other.purebasic
-        #
-        # The "Array" and "List" keywords only appear in structure definitions.
-        # They must be matched before the generic variable pattern gets them.
-        #
-        - match: '\b(?i:Array|List)\b'
-          scope: keyword.declaration.purebasic
-        #
-        # Generic member names. At least in this case it is easy to include the asterisk of pointers.
-        #
-        - match: '(\*)?(\w+)(\$)?'
-          captures:
-            1: variable.other.member.purebasic punctuation.definition.variable.purebasic
-            2: variable.other.member.purebasic
-            3: variable.other.member.purebasic punctuation.definition.variable.purebasic
+        - include: parameter_keywords
+        - include: members
         - include: keywords
         - include: types
         - include: punctuation
@@ -166,16 +189,39 @@ contexts:
     - include: variables
     - include: constants
 
+  #
+  # Variable and procedure definitions inside structure definitions and interface blocks.
+  #
+  members:
+    - match: '\b(\w+){{return_type}}(\()'
+      captures:
+        1: entity.name.function.forward-decl.purebasic
+        3: punctuation.separator.purebasic
+        4: meta.function.return-type.purebasic storage.type.purebasic
+        5: punctuation.section.parens.begin.purebasic
+      push: parameters
+    #
+    # Variables are scoped slightly different than all other variables.
+    #
+    - match: '(\*)?(\w+)(\$)?'
+      captures:
+        1: variable.other.member.purebasic punctuation.definition.variable.purebasic
+        2: variable.other.member.purebasic
+        3: variable.other.member.purebasic punctuation.definition.variable.purebasic
+
   labels:
     - match: '\b((\w+)(:))\s*$'
       captures:
         2: entity.name.label.purebasic
         3: punctuation.separator.purebasic
 
+  #
+  # Strings and numbers.
+  #
   literals:
     - match: '"'
       scope: punctuation.definition.string.begin.purebasic
-      push: 
+      push:
         - meta_scope: string.quoted.double.purebasic
         - match: '"'
           scope: punctuation.definition.string.end.purebasic
@@ -199,8 +245,11 @@ contexts:
     - match: '='
       scope: keyword.operator.assignment.purebasic
 
-    - match: '\b(?i:Break|Case|Continue|Default|Else|End|EndIf|EndSelect|ElseIf|Else|FakeReturn|For|ForEach|Forever|Gosub|Goto|If|Next|Repeat|Select|To|Until|Wend|While)\b'
+    - match: '\b(?i:Break|Case|Continue|CompilerCase|CompilerDefault|CompilerElse|CompilerElseIf|CompilerEndIf|CompilerEndSelect|CompilerIf|CompilerSelect|Default|Else|End|EndIf|EndSelect|ElseIf|Else|FakeReturn|For|ForEach|Forever|Gosub|Goto|If|Next|Repeat|Select|To|Until|Wend|While)\b'
       scope: keyword.control.purebasic
+
+    - match: '\b(?i:DataSection|EndDataSection|IncludeFile|IncludePath|XIncludeFile)\b'
+      scope: keyword.control.import.purebasic
 
     - match: '\b(?i:And|Not|Or|XOr)\b'
       scope: keyword.logical.purebasic
@@ -208,16 +257,15 @@ contexts:
     - match: '\b(?i:Interface)\b'
       scope: keyword.declaration.purebasic
 
-    - match: '\b(?i:(CompilerCase|CompilerDefault|CompilerElse|CompilerEndIf|CompilerEndSelect|CompilerError|CompilerIf|CompilerSelect|CompilerWarning|DataSection|Debug|EnableASM|EnableExplicit|EndDataSection|EndEnumeration|EndInterface|EndMacro|EndWith|Extends|IncludeFile|Macro|Module|ProcedureReturn|Step|Swap|UnuseModule|UseModule|With|XIncludeFile))\b{{following_pointer}}'
+    - match: '\b(?i:(CallDebugger|CompilerError|CompilerWarning|Data|Debug|DebugLevel|DisableASM|DisableDebugger|DisableExplicit|EnableASM|EnableDebugger|EnableExplicit|EndEnumeration|EndInterface|EndMacro|EndWith|Extends|Macro|MacroExpandedCount|Module|ProcedureReturn|Read|Restore|Step|Swap|UndefineMacro|UnuseModule|UseModule|With))\b{{following_pointer}}'
       captures:
         1: keyword.other.purebasic
         3: variable.other.purebasic punctuation.definition.variable.purebasic
 
-  parameters:
-    - meta_scope: meta.function.parameters.purebasic
-    - match: '\)'
-      scope: punctuation.section.parens.end.purebasic
-      set: procedures
+  #
+  # Whatever can occur inside the parenthesis of a procedure declaration.
+  #
+  parameter_list_contents:
     - include: literals
     - include: keywords
     - include: types
@@ -233,13 +281,37 @@ contexts:
         3: variable.parameter.purebasic punctuation.definition.variable.purebasic
     - include: constants
 
+  #
+  # The "Array" and "List" keywords may appear in structure and interface definitions.
+  # They must be matched before the generic variable pattern gets them.
+  #
+  parameter_keywords:
+    - match: '\b(?i:Array|List)\b'
+      scope: keyword.declaration.purebasic
+
+  #
+  # Generic parameter list of procedure declarations.
+  #
+  # Important: procedure implementation have their distinct context.
+  #
+  parameters:
+    - meta_content_scope: meta.function.parameters.purebasic
+    - match: '{{opening_parens}}'
+      captures:
+        1: punctuation.section.parens.begin.purebasic
+        2: variable.parameter.purebasic punctuation.definition.variable.purebasic
+    - match: '\)'
+      scope: punctuation.section.parens.end.purebasic
+      pop: true
+    - include: parameter_list_contents
+
   procedures:
     - meta_scope: meta.function.purebasic
     - match: '{{opening_parens}}'
       captures:
         1: punctuation.section.parens.begin.purebasic
-        2: variable.parameter.purebasic punctuation.definition.variable
-      set: parameters
+        2: variable.parameter.purebasic punctuation.definition.variable.purebasic
+      set: procedure_implementation_parameters
     - match: '\bEndProcedure\b'
       scope: keyword.other.purebasic
       pop: true
@@ -251,6 +323,18 @@ contexts:
     - include: punctuation
     - include: variables
     - include: constants
+
+  #
+  # This is a special context for the parameter list of procedure implementations.
+  # The sublime text scope naming documentation requires a scope shift back to "procedures" in such case.
+  # That would be wrong for other parameter lists like in interface blocks.
+  #
+  procedure_implementation_parameters:
+    - meta_scope: meta.function.parameters.purebasic
+    - match: '\)'
+      scope: punctuation.section.parens.end.purebasic
+      set: procedures
+    - include: parameter_list_contents
 
   punctuation:
     - match: '(,){{following_pointer}}'
@@ -275,7 +359,7 @@ contexts:
     #
     # Used for accessing members of a module.
     #
-    - match: '::'
+    - match: '::|\\'
       scope: punctuation.accessor.purebasic
 
   #
@@ -290,7 +374,7 @@ contexts:
       pop: true
 
   types:
-    - match: (\.)\s*(\w+)
+    - match: (\.)\s*(\w[\w-]*)
       captures:
         1: punctuation.separator.purebasic
         2: storage.type.purebasic

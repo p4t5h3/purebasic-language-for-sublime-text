@@ -3,8 +3,8 @@
 EnableExplicit
 
 Structure Location
-; <- keyword.declaration.struct.purebasic
-;^^^^^^^^ keyword.declaration.struct.purebasic
+; <- storage.type.struct keyword.declaration.struct.purebasic
+;^^^^^^^^ storage.type.struct keyword.declaration.struct.purebasic
 ;         ^^^^^^^^ entity.name.struct.purebasic
     X.d
 ;   ^ variable.other.member.purebasic
@@ -23,8 +23,8 @@ EndStructure
 ;^^^^^^^^^^^ keyword.other.purebasic
 
 Structure Venue Extends Location
-; <- keyword.declaration.struct.purebasic
-;^^^^^^^^ keyword.declaration.struct.purebasic
+; <- storage.type.struct keyword.declaration.struct.purebasic
+;^^^^^^^^ storage.type.struct keyword.declaration.struct.purebasic
 ;         ^^^^^ entity.name.struct.purebasic
 ;               ^^^^^^^ keyword.other.purebasic
 ;                       ^^^^^^^^ entity.name.struct.purebasic
@@ -43,8 +43,8 @@ Venues(0)\Y = 2
 Venues(0)\Z = 3
 
 Structure WithList
-; <- keyword.declaration.struct.purebasic
-;^^^^^^^^ keyword.declaration.struct.purebasic
+; <- storage.type.struct keyword.declaration.struct.purebasic
+;^^^^^^^^ storage.type.struct keyword.declaration.struct.purebasic
 ;         ^^^^^^^^ entity.name.struct.purebasic
     Name$
 ;   ^^^^^ variable.other.member.purebasic
@@ -63,8 +63,8 @@ EndStructure
 ;^^^^^^^^^^^ keyword.other.purebasic
 
 Structure WithArray
-; <- keyword.declaration.struct.purebasic
-;^^^^^^^^ keyword.declaration.struct.purebasic
+; <- storage.type.struct keyword.declaration.struct.purebasic
+;^^^^^^^^ storage.type.struct keyword.declaration.struct.purebasic
 ;         ^^^^^^^^^ entity.name.struct.purebasic
     a.l
 ;   ^ variable.other.member.purebasic
@@ -79,7 +79,7 @@ Structure WithArray
 ;        ^ punctuation.section.brackets.end
     Array c.l(3,3)
 ;   ^^^^^ keyword.declaration.purebasic
-;         ^ variable.other.member.purebasic
+;         ^ entity.name.function.forward-decl.purebasic
 ;          ^ punctuation.separator.purebasic
 ;           ^ storage.type.purebasic
 ;            ^ punctuation.section.parens.begin.purebasic
@@ -92,8 +92,8 @@ EndStructure
 ;^^^^^^^^^^^ keyword.other.purebasic
 
 Structure WithPointer
-; <- keyword.declaration.struct.purebasic
-;^^^^^^^^ keyword.declaration.struct.purebasic
+; <- storage.type.struct keyword.declaration.struct.purebasic
+;^^^^^^^^ storage.type.struct keyword.declaration.struct.purebasic
 ;         ^^^^^^^^^^^ entity.name.struct.purebasic
     *Next.Person
 ;   ^ punctuation.definition.variable.purebasic
@@ -112,8 +112,8 @@ EndStructure
 ;^^^^^^^^^^^ keyword.other.purebasic
 
 Structure Type
-; <- keyword.declaration.struct.purebasic
-;^^^^^^^^ keyword.declaration.struct.purebasic
+; <- storage.type.struct keyword.declaration.struct.purebasic
+;^^^^^^^^ storage.type.struct keyword.declaration.struct.purebasic
 ;         ^^^^ entity.name.struct.purebasic
     Name$
 ;   ^^^^^ variable.other.member.purebasic

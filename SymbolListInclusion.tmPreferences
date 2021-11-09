@@ -4,6 +4,7 @@
     <key>scope</key>
     <string>
         source.purebasic entity.name.function,
+        source.purebasic entity.name.interface,
         source.purebasic entity.name.label,
         source.purebasic entity.name.namespace,
         source.purebasic entity.name.struct

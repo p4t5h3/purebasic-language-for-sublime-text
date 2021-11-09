@@ -1,23 +1,35 @@
 ; SYNTAX TEST "Packages/purebasic-language-for-sublime-text/PureBasic.sublime-syntax"
 
 Declare Minimum()
-; <- keyword.declaration.function.purebasic
-;^^^^^^ keyword.declaration.function.purebasic
+; <- storage.type.function.purebasic keyword.declaration.function.purebasic
+;^^^^^^ storage.type.function.purebasic keyword.declaration.function.purebasic
 ;       ^^^^^^^ entity.name.function.forward-decl.purebasic
 ;              ^ punctuation.section.parens.begin.purebasic
 ;               ^ punctuation.section.parens.end.purebasic
 
 Declare.s GetUserName(*User.UserStructure, Capitalize.b = #False)
-; <- keyword.declaration.function.purebasic
-;^^^^^^ keyword.declaration.function.purebasic
+; <- storage.type.function.purebasic keyword.declaration.function.purebasic
+;^^^^^^ storage.type.function.purebasic keyword.declaration.function.purebasic
 ;      ^ punctuation.separator.purebasic
 ;       ^ meta.function.return-type.purebasic storage.type.purebasic
 ;         ^^^^^^^^^^^ entity.name.function.forward-decl.purebasic
 ;                    ^ punctuation.section.parens.begin.purebasic
+;                     ^ variable.parameter.purebasic punctuation.definition.variable.purebasic
+;                     ^^^^^ variable.parameter.purebasic
+;                          ^ punctuation.separator.purebasic
+;                           ^^^^^^^^^^^^^ storage.type.purebasic
+;                                        ^ punctuation.separator.purebasic
+;                                          ^^^^^^^^^^ variable.parameter.purebasic
+;                                                    ^ punctuation.separator.purebasic
+;                                                     ^ storage.type.purebasic
+;                                                       ^ keyword.operator.assignment.purebasic
+;                                                         ^ punctuation.definition.variable.purebasic
+;                                                         ^^^^^^ variable.other.constant.purebasic
+;                                                               ^ punctuation.section.parens.end.purebasic
 
 ProcedureDLL Minimum()
-; <- keyword.declaration.function.purebasic
-;^^^^^^^^^^^ keyword.declaration.function.purebasic
+; <- storage.type.function.purebasic keyword.declaration.function.purebasic
+;^^^^^^^^^^^ storage.type.function.purebasic keyword.declaration.function.purebasic
 ;           ^ meta.function.purebasic
 ;            ^^^^^^^ entity.name.function.purebasic
 ;                   ^ punctuation.section.parens.begin.purebasic
@@ -33,14 +45,14 @@ Minimum()
 ;       ^ punctuation.section.parens.end.purebasic
 
 Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
-; <- keyword.declaration.function.purebasic
-;^^^^^^^^ keyword.declaration.function.purebasic
+; <- storage.type.function.purebasic keyword.declaration.function.purebasic
+;^^^^^^^^ storage.type.function.purebasic keyword.declaration.function.purebasic
 ;        ^ punctuation.separator.purebasic
 ;         ^ meta.function.return-type.purebasic storage.type.purebasic
 ;           ^^^^^^^^^^^ entity.name.function.purebasic
 ;                      ^ punctuation.section.parens.begin.purebasic
 ;                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function.parameters.purebasic
-;                       ^ punctuation.definition.variable
+;                       ^ punctuation.definition.variable.purebasic
 ;                       ^^^^^ variable.parameter.purebasic
 ;                            ^ punctuation.separator.purebasic
 ;                             ^^^^^^^^^^^^^ storage.type.purebasic
@@ -52,7 +64,7 @@ Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ;                                                           ^ punctuation.definition.variable.purebasic
 ;                                                           ^^^^^^ variable.other.constant.purebasic
 ;                                                                 ^ punctuation.section.parens.end.purebasic
-    
+
 ; <- meta.function.purebasic
     ProcedureReturn "Anonymous"
 ; <- meta.function.purebasic
