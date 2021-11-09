@@ -1,7 +1,7 @@
 <snippet>
     <scope>source.purebasic</scope>
     <tabTrigger>If</tabTrigger>
-    <content><![CDATA[If $1
+    <content><![CDATA[If ${1:Expression}
     $0
 EndIf]]></content>
     <description>conditional block</description>

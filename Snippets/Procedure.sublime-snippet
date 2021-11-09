@@ -2,7 +2,7 @@
     <scope>source.purebasic</scope>
     <tabTrigger>Procedure</tabTrigger>
     <content><![CDATA[Procedure$1 ${2:ProcedureName}($3)
-    $0
+    ${0:;TODO}
 EndProcedure]]></content>
     <description>A procedure implementation</description>
 </snippet>

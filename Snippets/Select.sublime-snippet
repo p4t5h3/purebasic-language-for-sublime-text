@@ -3,7 +3,7 @@
     <tabTrigger>Select</tabTrigger>
     <content><![CDATA[Select ${1:Expression}
     Case ${2:Value}
-        $0
+        ${0:;TODO}
 EndSelect]]></content>
     <description>switch block</description>
 </snippet>

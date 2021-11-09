@@ -1,10 +1,10 @@
 <snippet>
     <scope>source.purebasic</scope>
     <tabTrigger>IfElse</tabTrigger>
-    <content><![CDATA[If $1
-    $2
+    <content><![CDATA[If ${1:Expression}
+    ${2:; TODO}
 Else
-    $0
+    ${0:;TODO}
 EndIf]]></content>
     <description>conditional block</description>
 </snippet>

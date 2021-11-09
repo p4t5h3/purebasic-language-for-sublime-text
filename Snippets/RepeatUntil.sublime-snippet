@@ -2,7 +2,7 @@
     <scope>source.purebasic</scope>
     <tabTrigger>RepeatUntil</tabTrigger>
     <content><![CDATA[Repeat
-    $0
-Until $1]]></content>
+    ${0:;TODO}
+Until ${1:Expression}]]></content>
     <description>repeat loop</description>
 </snippet>

@@ -2,7 +2,7 @@
     <scope>source.purebasic</scope>
     <tabTrigger>RepeatForever</tabTrigger>
     <content><![CDATA[Repeat
-    $0
+    ${0:;TODO}
 Forever]]></content>
     <description>infinite repeat loop</description>
 </snippet>
