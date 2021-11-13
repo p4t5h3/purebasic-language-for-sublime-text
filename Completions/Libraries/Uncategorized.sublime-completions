@@ -128,12 +128,6 @@
       "trigger" : "DotPath"
     },
     {
-      "details" : "Remove the current element from the map",
-      "contents": "DeleteMapElement(${1:Map()})$2",
-      "kind"    : "function",
-      "trigger" : "DeleteMapElement"
-    },
-    {
       "details" : "Create a new keyframe for the #NodeAnimation",
       "contents": "CreateNodeAnimationKeyFrame(${1:#NodeAnimation}, ${2:Time}, ${3:x}, ${4:y})$5",
       "kind"    : "function",
@@ -6116,12 +6110,6 @@
       "trigger" : "BillboardGroupCommonDirection"
     },
     {
-      "details" : "Adds a new empty element in the map",
-      "contents": "AddMapElement(${1:Map()})$2",
-      "kind"    : "function",
-      "trigger" : "AddMapElement"
-    },
-    {
       "details" : "Add a recipient to the specified #Mail",
       "contents": "AddMailRecipient(${1:#Mail}, ${2:Address.s})$3",
       "kind"    : "function",
@@ -6786,12 +6774,6 @@
       "contents": "FreeSound3D(${1:#Sound3D})$2",
       "kind"    : "function",
       "trigger" : "FreeSound3D"
-    },
-    {
-      "details" : "Find the specified element in the map",
-      "contents": "FindMapElement(${1:Map()})$2",
-      "kind"    : "function",
-      "trigger" : "FindMapElement"
     },
     {
       "details" : "Change the way the #Entity will be rendered",

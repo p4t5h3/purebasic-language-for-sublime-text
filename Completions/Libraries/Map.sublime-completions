@@ -1,0 +1,77 @@
+{
+  "scope"      : "source.purebasic",
+  "completions": [
+    {
+      "details" : "Adds a new empty element in the Map() using the specified key.",
+      "contents": "AddMapElement(${1:Map()}, ${2:Key$})$0",
+      "kind"    : "function",
+      "trigger" : "AddMapElement"
+    },
+    {
+      "details" : "Clears all the elements in the specified map and releases their memory.",
+      "contents": "ClearMap(${1:Map()})$0",
+      "kind"    : "function",
+      "trigger" : "ClearMap"
+    },
+    {
+      "details" : "Copy every element of the source to the destination map.",
+      "contents": "CopyMap(${1:SourceMap()}, ${2:DestinationMap()})$0",
+      "kind"    : "function",
+      "trigger" : "CopyMap"
+    },
+    {
+      "details" : "Removes the current element or the element with the given key from the specified map.",
+      "contents": "DeleteMapElement(${1:Map()}, ${2:Key$})$0",
+      "kind"    : "function",
+      "trigger" : "DeleteMapElement"
+    },
+    {
+      "details" : "Change the current map element to the element associated at the specified key.",
+      "contents": "FindMapElement(${1:Map()}, ${2:Key$})$0",
+      "kind"    : "function",
+      "trigger" : "FindMapElement"
+    },
+    {
+      "details" : "Free the specified map and release all its associated memory.",
+      "contents": "FreeMap(${1:Map()})$0",
+      "kind"    : "function",
+      "trigger" : "FreeMap"
+    },
+    {
+      "details" : "Returns the key of the current map element.",
+      "contents": "MapKey(${1:Map()})$0",
+      "kind"    : "function",
+      "trigger" : "MapKey"
+    },
+    {
+      "details" : "Returns the number of elements in the specified map.",
+      "contents": "MapSize(${1:Map()})$0",
+      "kind"    : "function",
+      "trigger" : "MapSize"
+    },
+    {
+      "details" : "Moves from the current element to the next element in the specified map, or onto the first element if ResetMap() was previously called.",
+      "contents": "NextMapElement(${1:Map()})$0",
+      "kind"    : "function",
+      "trigger" : "NextMapElement"
+    },
+    {
+      "details" : "Restores the current element of the map previously remembered using PushMapPosition().",
+      "contents": "PopMapPosition(${1:Map()})$0",
+      "kind"    : "function",
+      "trigger" : "PopMapPosition"
+    },
+    {
+      "details" : "Remembers the current element (if any) of the map so it can later be restored using PopMapPosition().",
+      "contents": "PushMapPosition(${1:Map()})$0",
+      "kind"    : "function",
+      "trigger" : "PushMapPosition"
+    },
+    {
+      "details" : "Resets the current element of the specified map to be before the first element.",
+      "contents": "ResetMap(${1:Map()})$0",
+      "kind"    : "function",
+      "trigger" : "ResetMap"
+    }
+  ]
+}
