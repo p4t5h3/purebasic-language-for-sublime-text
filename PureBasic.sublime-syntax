@@ -86,14 +86,6 @@ contexts:
 
     - match: '\b(?i:Global|Protected|Runtime|Shared|Static|Threaded)\b'
       scope: storage.modifier.purebasic
-      push:
-        - include: terminators
-        - include: literals
-        - include: keywords
-        - include: types
-        - include: punctuation
-        - include: variables
-        - include: constants
 
     - match: '\b(?i:(DeclareModule|Module)\s+(\w+))\b'
       captures:
