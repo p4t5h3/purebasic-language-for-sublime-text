@@ -36,3 +36,21 @@ EnumerationBinary BinaryEnumerationName
 EndEnumeration
 ; <- keyword.other.purebasic
 ;^^^^^^^^^^^^^ keyword.other.purebasic
+
+Enumeration EverythingAtOnce 2 Step 3;Comment
+; <- storage.type.enum keyword.declaration.enum.purebasic
+;^^^^^^^^^^ storage.type.enum keyword.declaration.enum.purebasic
+;           ^^^^^^^^^^^^^^^^ entity.name.enum.purebasic
+;                            ^ constant.numeric.purebasic
+;                              ^^^^ keyword.other.purebasic
+;                                   ^ constant.numeric.purebasic
+;                                    ^^^^^^^^ comment.line.purebasic
+    #ExitCode_Success
+;   ^ punctuation.definition.variable.purebasic
+;   ^^^^^^^^^^^^^^^^^ variable.other.constant.purebasic
+    #ExitCode_Failure
+;   ^ punctuation.definition.variable.purebasic
+;   ^^^^^^^^^^^^^^^^^ variable.other.constant.purebasic
+EndEnumeration
+; <- keyword.other.purebasic
+;^^^^^^^^^^^^^ keyword.other.purebasic

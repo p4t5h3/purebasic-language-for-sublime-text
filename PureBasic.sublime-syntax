@@ -37,11 +37,12 @@ contexts:
           pop: true
 
   declarations:
-    - match: '\b(?i:(Enumeration|EnumerationBinary))\s+(\D\w*)?'
+    - match: '\b(?i:(Enumeration|EnumerationBinary))(\s+(\D\w+))?\b'
       captures:
         1: storage.type.enum.purebasic keyword.declaration.enum.purebasic
-        2: entity.name.enum.purebasic
+        3: entity.name.enum.purebasic
       push:
+        - include: comments
         - include: terminators
         - include: literals
         - include: keywords
