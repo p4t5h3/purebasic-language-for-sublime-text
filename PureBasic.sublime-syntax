@@ -170,10 +170,16 @@ contexts:
         - include: types
         - include: punctuation
 
+  leading_pointers:
+    - match: '^\s*(\*)'
+      captures:
+        1: punctuation.definition.variable.purebasic variable.other.purebasic
+
   main:
     - include: comments
     - include: literals
     - include: declarations
+    - include: leading_pointers
     - include: keywords
     - include: types
     - include: punctuation
@@ -235,8 +241,10 @@ contexts:
     - match: '<|>|<>|<=|>='
       scope: keyword.comparison.purebasic
 
-    - match: '='
-      scope: keyword.operator.assignment.purebasic
+    - match: '(=){{following_pointer}}'
+      captures:
+        1: keyword.operator.assignment.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
 
     - match: '\b(?i:Break|Case|Continue|CompilerCase|CompilerDefault|CompilerElse|CompilerElseIf|CompilerEndIf|CompilerEndSelect|CompilerIf|CompilerSelect|Default|Else|End|EndIf|EndSelect|ElseIf|Else|FakeReturn|For|ForEach|Forever|Gosub|Goto|If|Next|Repeat|Select|To|Until|Wend|While)\b'
       scope: keyword.control.purebasic

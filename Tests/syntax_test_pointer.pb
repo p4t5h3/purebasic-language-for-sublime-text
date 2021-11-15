@@ -88,6 +88,25 @@ Define *MyScreen.MyStructure = CreateMyStructure()
 ;      ^ punctuation.definition.variable.purebasic
 ;      ^^^^^^^^^ variable.other.purebasic
 
+Define *NullPointer = #Null
+; <- keyword.declaration.purebasic
+;^^^^^ keyword.declaration.purebasic
+;      ^ punctuation.definition.variable.purebasic
+;      ^^^^^^^^^^^^ variable.other.purebasic
+;                   ^ keyword.operator.assignment.purebasic
+;                     ^ punctuation.definition.variable.purebasic
+;                     ^^^^^ variable.other.constant.purebasic
+
+*MyScreen\SomePointer = *NullPointer
+; <- punctuation.definition.variable.purebasic
+; <- variable.other.purebasic
+;^^^^^^^^ variable.other.purebasic
+;        ^ punctuation.accessor.purebasic
+;         ^^^^^^^^^^^ variable.other.purebasic
+;                     ^ keyword.operator.assignment.purebasic
+;                       ^ punctuation.definition.variable.purebasic
+;                       ^^^^^ variable.other.purebasic
+
 Define *StringAddress = @"This is a string in memory"
 ;      ^ punctuation.definition.variable.purebasic
 ;      ^^^^^^^^^^^^^^ variable.other.purebasic
