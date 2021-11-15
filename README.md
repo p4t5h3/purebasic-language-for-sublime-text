@@ -7,14 +7,14 @@ This is a spare time experiment to extend [Sublime Text](https://www.sublimetext
 For now the most recent and stable PureBasic release represents the specification to conform to.
 Deprecated or removed symbols from past releases can also be supported, if no conflicts result from that.
 
-**If you notice anything like a PureBasic keyword or standard library procedure missing, please [report an issue](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues).**
+If you notice anything like a PureBasic keyword or standard library procedure missing, please [report an issue](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues).
 
 ## Syntax Definition
 
 This package ships with a syntax definition which may not cover everything (yet) but most of what matters for a pleasant editing and reading experience.
 In example: you can quickly navigate to procedure implementations because Sublime Text recognizes them because of the syntax definition.
 
-If you stumble across unrecognized keywords or other expressions, then please file an issue in [the issue tracker](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues).
+If you stumble across unrecognized keywords or other expressions, then please file an issue in [the issue tracker](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues). As far as the official documentation goes I think I did not miss anything. As [#22](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues/22) shows sometimes the syntax definition needs only a little bit of tweaking to improve support for already known expressions.
 
 ## Symbol List
 
@@ -35,11 +35,9 @@ Please refer to the PureBasic documentation for setting up commandline usage.
 
 ## Installation
 
-This package is still in development and not fit for release as something I would ship as a 1.0.0.
-However it can be installed by cloning the repository in your user package directory of Sublime Text.
-Currently I assume that you are familiar with Sublime Text.
+The goal is to release this package on [Package Control](https://packagecontrol.io). [There is an open pull request for that](https://github.com/wbond/package_control_channel/pull/8406).
 
-[The goal is to release the initial release version on Package Control.](https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues/3)
+Otherwise it can be installed manually by cloning the repository in your user package directory of Sublime Text.
 
 ## History
 
@@ -56,7 +54,7 @@ Career already took me elsewhere.
 So every now and then I have a nostalgic urge to pick up PureBasic again. Though meanwhile I came back to Sublime Text as a sidekick.
 Atom, rooted in its Electron.js foundation, is a horribly slow and resource hungry editor and at some point I was tired of it.
 I ported much stuff from [my Atom language support package](https://github.com/peterthomashorn/language-purebasic) in form of this Sublime Text package.
-Sublime Text is much faster and efficient, especially with large files.
+Sublime Text is much faster and efficient, especially with large files. This time I took it further.
 
 ## Contributing
 
