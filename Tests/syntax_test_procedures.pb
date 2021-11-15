@@ -65,6 +65,12 @@ Procedure.s GetUserName(*User.UserStructure, Capitalize.b = #False)
 ;                                                           ^^^^^^ variable.other.constant.purebasic
 ;                                                                 ^ punctuation.section.parens.end.purebasic
 
+    Minimum()
+;   ^^^^^^^^^ meta.function-call.purebasic
+;   ^^^^^^^ variable.function.purebasic
+;          ^ punctuation.section.parens.begin.purebasic
+;           ^ punctuation.section.parens.end.purebasic
+
 ; <- meta.function.purebasic
     ProcedureReturn "Anonymous"
 ; <- meta.function.purebasic

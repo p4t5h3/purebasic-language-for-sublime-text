@@ -316,6 +316,7 @@ contexts:
     - match: '\bEndProcedure\b'
       scope: keyword.other.purebasic
       pop: true
+    - include: calls
     - include: comments
     - include: literals
     - include: declarations
