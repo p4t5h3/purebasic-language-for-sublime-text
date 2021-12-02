@@ -7713,7 +7713,7 @@
     },
     {
       "details" : "Send the mail",
-      "contents": "SendMail(${1:#Mail}, ${2:Smtp$})$3",
+      "contents": "SendMail(${1:#Mail}, ${2:Smtp.s})$3",
       "kind"    : "function",
       "trigger" : "SendMail"
     },
@@ -8337,7 +8337,7 @@
     },
     {
       "details" : "Create a Web gadget in the current GadgetList",
-      "contents": "WebGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height}, ${6:URL$})$7",
+      "contents": "WebGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height}, ${6:URL.s})$7",
       "kind"    : "function",
       "trigger" : "WebGadget"
     },

@@ -3,7 +3,7 @@
   "completions": [
       {
         "details"   : "Decodes the specified string using the Base64 algorithm",
-        "contents"  : "Base64Decoder(${1:Input$}, ${2:*OutputBuffer}, ${3:*OutputSize})$4",
+        "contents"  : "Base64Decoder(${1:Input.s}, ${2:*OutputBuffer}, ${3:*OutputSize})$4",
         "annotation": "Integer",
         "kind"      : "function",
         "trigger"   : "Base64Decoder"

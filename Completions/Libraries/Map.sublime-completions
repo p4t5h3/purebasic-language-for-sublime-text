@@ -3,7 +3,7 @@
   "completions": [
     {
       "details" : "Adds a new empty element in the Map() using the specified key.",
-      "contents": "AddMapElement(${1:Map()}, ${2:Key$})$0",
+      "contents": "AddMapElement(${1:Map()}, ${2:Key.s})$0",
       "kind"    : "function",
       "trigger" : "AddMapElement"
     },
@@ -21,13 +21,13 @@
     },
     {
       "details" : "Removes the current element or the element with the given key from the specified map.",
-      "contents": "DeleteMapElement(${1:Map()}, ${2:Key$})$0",
+      "contents": "DeleteMapElement(${1:Map()}, ${2:Key.s})$0",
       "kind"    : "function",
       "trigger" : "DeleteMapElement"
     },
     {
       "details" : "Change the current map element to the element associated at the specified key.",
-      "contents": "FindMapElement(${1:Map()}, ${2:Key$})$0",
+      "contents": "FindMapElement(${1:Map()}, ${2:Key.s})$0",
       "kind"    : "function",
       "trigger" : "FindMapElement"
     },
