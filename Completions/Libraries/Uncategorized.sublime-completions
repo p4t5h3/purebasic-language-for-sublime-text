@@ -2331,7 +2331,7 @@
     },
     {
       "details" : "Opens a new window according to the specified parameters",
-      "contents": "OpenWindow(${1:#Window}, ${2:x}, ${3:y}, ${4:InnerWidth}, ${5:InnerHeight}, ${6:Title$})$7",
+      "contents": "OpenWindow(${1:#Window}, ${2:x}, ${3:y}, ${4:InnerWidth}, ${5:InnerHeight}, ${6:Title.s})$0",
       "kind"    : "function",
       "trigger" : "OpenWindow"
     },
