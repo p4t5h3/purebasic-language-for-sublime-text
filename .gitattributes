@@ -1,0 +1,7 @@
+/.github export-ignore
+.gitignore export-ignore
+*.sublime-project export-ignore
+CONTRIBUTING.md export-ignore
+LICENSE export-ignore
+README.md export-ignore
+/Tests export-ignore
