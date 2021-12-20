@@ -218,6 +218,18 @@ contexts:
   # Strings and numbers.
   #
   literals:
+    # Strings with escape sequences require a tilde before the beginning double quote.
+    - match: '~"'
+      scope: punctuation.definition.string.begin.purebasic
+      push:
+        - meta_scope: string.quoted.double.purebasic
+        - match: '\\[\w\d"]'
+          scope: constant.character.escape.purebasic
+        - match: '"'
+          scope: punctuation.definition.string.end.purebasic
+          pop: true
+
+    # Literal strings without escape sequences.
     - match: '"'
       scope: punctuation.definition.string.begin.purebasic
       push:
