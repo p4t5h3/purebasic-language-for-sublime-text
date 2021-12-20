@@ -102,7 +102,7 @@ Define *NullPointer = #Null
 ; <- variable.other.purebasic
 ;^^^^^^^^ variable.other.purebasic
 ;        ^ punctuation.accessor.purebasic
-;         ^^^^^^^^^^^ variable.other.purebasic
+;         ^^^^^^^^^^^ variable.other.member.purebasic
 ;                     ^ keyword.operator.assignment.purebasic
 ;                       ^ punctuation.definition.variable.purebasic
 ;                       ^^^^^ variable.other.purebasic

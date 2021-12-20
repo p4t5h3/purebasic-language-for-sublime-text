@@ -39,8 +39,17 @@ EndStructure
 Dim Venues.Venue(10)
 
 Venues(0)\X = 1
+;        ^ punctuation.accessor.purebasic
+;         ^ variable.other.member.purebasic
+;           ^ keyword.operator.assignment.purebasic
 Venues(0)\Y = 2
+;        ^ punctuation.accessor.purebasic
+;         ^ variable.other.member.purebasic
+;           ^ keyword.operator.assignment.purebasic
 Venues(0)\Z = 3
+;        ^ punctuation.accessor.purebasic
+;         ^ variable.other.member.purebasic
+;           ^ keyword.operator.assignment.purebasic
 
 Structure WithList
 ; <- storage.type.struct keyword.declaration.struct.purebasic
@@ -137,3 +146,21 @@ Structure Type
 EndStructure
 ; <- keyword.other.purebasic
 ;^^^^^^^^^^^ keyword.other.purebasic
+
+Structure WithFieldsNamedLikeKeywords
+  End.i
+; ^^^ variable.other.member.purebasic
+EndStructure
+
+NewList Something.WithFieldsNamedLikeKeywords()
+AddElement(Something())
+
+Something()\End = 1
+;          ^ punctuation.accessor.purebasic
+;           ^^^ variable.other.member.purebasic
+;               ^ keyword.operator.assignment.purebasic
+;                 ^ constant.numeric.purebasic
+
+Debug Something()\End
+;                ^ punctuation.accessor.purebasic
+;                 ^^^ variable.other.member.purebasic

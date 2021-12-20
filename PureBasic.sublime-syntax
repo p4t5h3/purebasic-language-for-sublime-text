@@ -373,8 +373,17 @@ contexts:
     #
     # Used for accessing members of a module.
     #
-    - match: '::|\\'
+    - match: '::'
       scope: punctuation.accessor.purebasic
+
+    #
+    # Used for accessing structure fields.
+    #
+    - match: '(\\)({{variables}})'
+      captures:
+        1: punctuation.accessor.purebasic
+        2: variable.other.member.purebasic
+        5: punctuation.definition.variable.purebasic
 
   #
   # Commands in PureBasic are typically terminated by the end of the line.
