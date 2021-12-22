@@ -31,13 +31,17 @@ This package features a simple [Sublime Text build system](https://www.sublimete
 It enables you to build and run the current PureBasic source code file.
 
 The build system assumes the PureBasic compiler to be available in the `PATH`.
-Please refer to the PureBasic documentation for setting up commandline usage.
+Please refer to the PureBasic documentation for setting up commandline usage. Not [the documentation you likely think of](https://www.purebasic.com/documentation/) as I would do, too, but the Install.txt shipped with PureBasic. In example for macOS it is located inside the PureBasic.app bundle in `Contents/Resources/`.
 
 ## Installation
 
-The goal is to release this package on [Package Control](https://packagecontrol.io). [There is an open pull request for that](https://github.com/wbond/package_control_channel/pull/8406).
+### Package Control
 
-Otherwise it can be installed manually by cloning the repository in your user package directory of Sublime Text.
+[This is available on Package Control](https://packagecontrol.io/packages/PureBasic).
+
+### Manual
+
+Otherwise it can be installed manually by cloning the repository in [your package directory of Sublime Text](https://www.sublimetext.com/docs/packages.html#locations).
 
 ## History
 

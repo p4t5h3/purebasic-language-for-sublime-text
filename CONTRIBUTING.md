@@ -10,4 +10,4 @@ This eases maintenance. The one big completions file is a leftover from the pred
 
 ## Tests
 
-As most as possible should be covered by syntax tests. You can read about them in the Sublime Text documentation.
+As most as possible should be covered by syntax tests. You can read about them in [the Sublime Text documentation](https://www.sublimetext.com/docs/syntax.html#testing).
