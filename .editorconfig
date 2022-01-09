@@ -1,0 +1,47 @@
+root = true
+
+## Repository Configurations
+############################
+[.{git*,editorconfig}]
+end_of_line = lf
+indent_style = space
+indent_size = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[.gitmodules]
+indent_style = tab
+
+
+## Sublime Text 3
+#################
+[*.sublime-*,hidden-tmTheme,tmLanguage,tmPreferences,YAML-propertyList,YAML-tmLanguage}]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = unset
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## PureBasic Files
+##################
+[*.pb]
+charset = utf-8-bom
+indent_style = space
+indent_size = 2
+end_of_line = unset
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Markdown GFM
+###############
+[*.md]
+indent_style = space
+indent_size = unset
+end_of_line = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true

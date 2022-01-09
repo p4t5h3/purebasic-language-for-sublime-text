@@ -1,6 +1,55 @@
-/.github export-ignore
-.gitignore export-ignore
+* text=auto
+
+## Repository Configuration
+###########################
+.editorconfig    text eol=lf
+.gitattributes   text eol=lf
+.gitconfig       text eol=lf
+.gitignore       text eol=lf
+.gitmodules      text eol=lf
+
+
+## PureBasic
+############
+[attr]PureBasic text linguist-language=PureBasic
+*.cfg   text linguist-generated=true
+*.pb    PureBasic
+*.pbf   PureBasic
+*.pbi   PureBasic
+*.pbp   linguist-language=XML linguist-generated=true
+
+
+## Sublime Text 4
+#################
+*.hidden-tmTheme         text  eol=lf  linguist-language=XML
+*.sublime-build          text          linguist-language=JSONC
+*.sublime-color-scheme   text          linguist-language=JSONC
+*.sublime-commands       text          linguist-language=JSONC
+*.sublime-completions    text          linguist-language=JSONC
+*.sublime-keymap         text          linguist-language=JSONC
+*.sublime-macro          text          linguist-language=JSONC
+*.sublime-menu           text          linguist-language=JSONC
+*.sublime-mousemap       text          linguist-language=JSONC
+*.sublime-project        text          linguist-language=JSONC
+*.sublime-settings       text          linguist-language=JSONC
+*.sublime-snippet        text          linguist-language=XML
+*.sublime-syntax         text          linguist-language=YAML
+*.sublime-theme          text          linguist-language=JSONC
+*.sublime-workspace      text          linguist-language=JSONC
+*.sublime_metrics        text          linguist-language=JSONC
+*.sublime_session        text          linguist-language=JSONC
+*.tmLanguage             text          linguist-language=XML
+*.tmPreferences          text          linguist-language=XML
+*.YAML-propertyList      text          linguist-language=YAML
+*.YAML-tmLanguage        text          linguist-language=YAML
+
+
+## Package Exclusion Rules
+##########################
+
 *.sublime-project export-ignore
+.editorconfig export-ignore
+/.git* export-ignore
+/Tests export-ignore
 CONTRIBUTING.md export-ignore
 README.md export-ignore
-/Tests export-ignore
