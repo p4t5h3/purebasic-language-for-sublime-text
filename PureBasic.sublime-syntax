@@ -3,6 +3,7 @@
 file_extensions:
   - pb
   - pbi
+  - pbf
 scope: source.purebasic
 variables:
   following_pointer: '(\s*(\*))?'
