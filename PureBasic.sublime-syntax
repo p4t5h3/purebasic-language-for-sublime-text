@@ -205,9 +205,9 @@ contexts:
     #
     - match: '(\*)?(\w+)(\$)?'
       captures:
-        1: variable.other.member.purebasic punctuation.definition.variable.purebasic
-        2: variable.other.member.purebasic
-        3: variable.other.member.purebasic punctuation.definition.variable.purebasic
+        0: variable.other.member.purebasic
+        1: punctuation.definition.variable.purebasic
+        3: punctuation.definition.variable.purebasic
 
   labels:
     - match: '\b((\w+)(:))\s*$'
@@ -290,9 +290,9 @@ contexts:
     #
     - match: '{{variables}}'
       captures:
-        1: variable.parameter.purebasic punctuation.definition.variable.purebasic
-        2: variable.parameter.purebasic
-        3: variable.parameter.purebasic punctuation.definition.variable.purebasic
+        0: variable.parameter.purebasic
+        1: punctuation.definition.variable.purebasic
+        3: punctuation.definition.variable.purebasic
     - include: constants
 
   #
@@ -406,12 +406,12 @@ contexts:
   variables:
     - match: '{{variables}}'
       captures:
-        1: variable.other.purebasic punctuation.definition.variable.purebasic
-        2: variable.other.purebasic
-        3: variable.other.purebasic punctuation.definition.variable.purebasic
+        0: variable.other.purebasic
+        1: punctuation.definition.variable.purebasic
+        3: punctuation.definition.variable.purebasic
 
   constants:
     - match: '(#)([\w_]+)\b'
       captures:
-        1: variable.other.constant.purebasic punctuation.definition.variable.purebasic
-        2: variable.other.constant.purebasic
+        0: variable.other.constant.purebasic
+        1: punctuation.definition.variable.purebasic
