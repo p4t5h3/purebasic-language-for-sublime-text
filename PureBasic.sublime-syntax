@@ -5,6 +5,7 @@ file_extensions:
   - pbi
   - pbf
 scope: source.purebasic
+version: 2
 variables:
   following_pointer: '(\s*(\*))?'
   opening_parens: '(\()(\*)?'
