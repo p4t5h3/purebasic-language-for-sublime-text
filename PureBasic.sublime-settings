@@ -1,0 +1,17 @@
+{
+  // Add a BOM to new PureBasic files because the native PureBasic IDE of the
+  // language uses it to distinguish between Unicode and ASCII files.
+
+  // If we don't, UTF-8 sources without BOM created with Sublime Text will be
+  // interpreted as being "ASCII" encoded when opened with the PureBasic IDE,
+  // leading to encoding corruption for characters above 127.
+
+  // Since support for ASCII mode was dropped in PureBasic 5.50, we don't need
+  // to provide a fallback encoding for "ASCII" sources. Moreover, the actual
+  // single-character encoding adopted by the PureBasic IDE depends on the OS
+  // locale, so we have no way to establish whether it would be Latin1, Windows
+  // 1252, ISO-8859-5 (Latin/Cyrillic), or anyone of the many encodings and
+  // code pages from the pre-Unicode era.
+
+  "default_encoding": "UTF-8 with BOM",
+}
