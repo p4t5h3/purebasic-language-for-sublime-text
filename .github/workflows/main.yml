@@ -3,28 +3,52 @@ name: Syntax Tests
 on:
   push:
     paths:
-      - '**.sublime-syntax'
-      - '**/syntax_test*'
+      - '**/syntax_test_*'
+      - '**/*.sublime-syntax'
+      - '.github/workflows/main.yml'
   pull_request:
+    branches:
+      - '*'
     paths:
-      - '**.sublime-syntax'
-      - '**/syntax_test*'
+      - '**/syntax_test_*'
+      - '**/*.sublime-syntax'
+      - '.github/workflows/main.yml'
   workflow_dispatch:
 
 jobs:
-  syntax_tests:
-    name: Syntax Tests (${{ matrix.build }})
+  run_syntax_tests:
+    name: Test on Build ${{ matrix.sublime-build }} (${{ matrix.sublime-channel }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    continue-on-error: ${{ matrix.optional }}
     strategy:
+      max-parallel: 2
+      fail-fast: false
       matrix:
         include:
-          - build: latest  # This is the default
-            packages: false
-          - build: 3210  # Latest known ST3 build with a test binary
-            packages: false
-    runs-on: ubuntu-latest
+          - sublime-channel: stable
+            sublime-build: 4126
+            optional: false
     steps:
-      - uses: actions/checkout@v2
-      - uses: SublimeText/syntax-test-action@v2
-        with:
-          build: ${{ matrix.build }}
-          default_packages: ${{ matrix.packages }}
+
+      - name: Git checkout
+        uses: actions/checkout@master
+
+      - name: Get binary for Build ${{ matrix.sublime-build }} (${{ matrix.sublime-channel }})
+        run: |
+          wget -O st_syntax_tests.tar.xz https://download.sublimetext.com/st_syntax_tests_build_${{ matrix.sublime-build }}_x64.tar.xz
+          tar xf st_syntax_tests.tar.xz
+          rm -R st_syntax_tests.tar.xz
+
+      - name: 'Move package contents into "Data/Packages/PureBasic"'
+        run: |
+          mkdir -p st_syntax_tests/Data/Packages/PureBasic
+          find . -not -path './st_syntax_tests*' -exec mv '{}' st_syntax_tests/Data/Packages/PureBasic ';'
+
+      - name: Move everything into the working directory again
+        run: |
+          mv st_syntax_tests/* ./
+          rm -R st_syntax_tests
+
+      - name: Run syntax tests
+        run: ./syntax_tests
