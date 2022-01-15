@@ -43,7 +43,7 @@ jobs:
       - name: 'Move package contents into "Data/Packages/PureBasic"'
         run: |
           mkdir -p st_syntax_tests/Data/Packages/PureBasic
-          find . -not -path './st_syntax_tests*' -exec mv '{}' st_syntax_tests/Data/Packages/PureBasic ';'
+          find . -not -name '.' -not -path './st_syntax_tests*' -exec mv '{}' st_syntax_tests/Data/Packages/PureBasic ';'
 
       - name: Move everything into the working directory again
         run: |
