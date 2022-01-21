@@ -1,26 +1,52 @@
-﻿; SYNTAX TEST "Packages/PureBasic/PureBasic.sublime-syntax"
+﻿;; SYNTAX TEST "Packages/PureBasic/PureBasic.sublime-syntax"
+
+; For info, see "Variables and Types":
+; https://www.com/documentation/reference/variables.html
 
 EnableExplicit
 
 Global Left = #True
 Global Right = #False
 
-If Left And Right
-;       ^^^ keyword.logical.purebasic
-    Debug #True
-EndIf
+If Left And Right : Debug #True : EndIf
+;;      ^^^   keyword.operator.word
 
-If Left Or Right
-;       ^^ keyword.logical.purebasic
-    Debug #True
-EndIf
+If Left Or Right : Debug #True : EndIf
+;;      ^^   keyword.operator.word
 
-If Not Left And Right
-;  ^^^ keyword.logical.purebasic
-    Debug #True
-EndIf
+If Not Left And Right : Debug #True : EndIf
+;; ^^^            keyword.operator.word
+;;          ^^^   keyword.operator.word
 
-If Left XOr Right
-;       ^^^ keyword.logical.purebasic
-    Debug #True
-EndIf
+If Left XOr Right : Debug #True : EndIf
+;;      ^^^   keyword.operator.word
+
+; Test for case-sensitivity
+; =========================
+
+If Left and Right : Debug #True : EndIf
+;;      ^^^   keyword.operator.word
+
+If Left or Right : Debug #True : EndIf
+;;      ^^   keyword.operator.word
+
+If not Left and Right : Debug #True : EndIf
+;; ^^^            keyword.operator.word
+;;          ^^^   keyword.operator.word
+
+If Left xor Right : Debug #True : EndIf
+;;      ^^^   keyword.operator.word
+
+; Test Pointers
+; =============
+; Because 'operators_logical' also handles pointer variables.
+
+Define *Leftp = Left
+#RightC = #False
+
+If #RightC And *Left : Debug #True : EndIf
+;;             ^^^   variable.other
+;;             ^     punctuation.definition.variable
+;;         ^^^       keyword.operator.word
+;; ^^^^^^^           variable.other.constant
+;; ^                 punctuation.definition.variable

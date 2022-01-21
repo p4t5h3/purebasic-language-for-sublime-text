@@ -244,30 +244,13 @@ contexts:
       scope: constant.numeric.purebasic
 
   keywords:
-    - match: '(\+|-|\*|/|%|<<|>>){{following_pointer}}'
-      captures:
-        1: keyword.operator.arithmetic.purebasic
-        3: variable.other.purebasic punctuation.definition.variable.purebasic
-
-    - match: '&|\||!|~'
-      scope: keyword.operator.bitwise.purebasic
-
-    - match: '<|>|<>|<=|>='
-      scope: keyword.comparison.purebasic
-
-    - match: '(=){{following_pointer}}'
-      captures:
-        1: keyword.operator.assignment.purebasic
-        3: variable.other.purebasic punctuation.definition.variable.purebasic
+    - include: operators_all
 
     - match: '\b(?i:Break|Case|Continue|CompilerCase|CompilerDefault|CompilerElse|CompilerElseIf|CompilerEndIf|CompilerEndSelect|CompilerIf|CompilerSelect|Default|Else|End|EndIf|EndSelect|ElseIf|Else|FakeReturn|For|ForEach|Forever|Gosub|Goto|If|Next|Repeat|Select|To|Until|Wend|While)\b'
       scope: keyword.control.purebasic
 
     - match: '\b(?i:DataSection|EndDataSection|IncludeFile|IncludePath|XIncludeFile)\b'
       scope: keyword.control.import.purebasic
-
-    - match: '\b(?i:And|Not|Or|XOr)\b'
-      scope: keyword.logical.purebasic
 
     - match: '\b(?i:Interface)\b'
       scope: keyword.declaration.purebasic
@@ -416,3 +399,35 @@ contexts:
       captures:
         0: variable.other.constant.purebasic
         1: punctuation.definition.variable.purebasic
+
+  operators_all:
+    - include: operators_arithmetic
+    - include: operators_assignment
+    - include: operators_comparison
+    - include: operators_logical
+    - include: operators_bitwise
+  operators_arithmetic:
+    - match: '(\+|-|\*|/|%|<<|>>){{following_pointer}}'
+      captures:
+        1: keyword.operator.arithmetic.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
+  operators_assignment:
+    - match: '(=(?![<>])){{following_pointer}}'
+      captures:
+        1: keyword.operator.assignment.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
+  operators_comparison:
+    - match: '(<=?|>=?|=<?|=>?|<>){{following_pointer}}'
+      captures:
+        1: keyword.operator.comparison.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
+  operators_logical:
+    - match: '(?i)\b(And|Or|XOr|Not)\b{{following_pointer}}'
+      captures:
+        1: keyword.operator.word.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
+  operators_bitwise:
+    - match: '(&|\||!|~){{following_pointer}}'
+      captures:
+        1: keyword.operator.bitwise.purebasic
+        3: variable.other.purebasic punctuation.definition.variable.purebasic
