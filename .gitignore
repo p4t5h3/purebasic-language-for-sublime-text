@@ -12,6 +12,37 @@ project.cfg
 *.sublime-workspace
 
 
+## Binary files
+###############
+
+# Object files
+# ------------
+*.elf
+*.ko
+*.o
+*.obj
+
+# Static libraries
+# ----------------
+*.a
+*.la
+*.lib
+*.lo
+
+# Shared objects
+# --------------
+*.dll
+*.dylib
+*.so
+*.so.*
+
+# Executables
+# -----------
+*.app
+*.exe
+*.out
+
+
 ## OS Specific
 ##############
 ## Created by https://www.gitignore.io/api/linux,macos,windows
