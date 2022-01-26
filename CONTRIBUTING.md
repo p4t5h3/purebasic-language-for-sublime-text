@@ -3,7 +3,9 @@
 If you are not familiar yet with Sublime Text package development, please head over to the [Sublime Text documentation] first.
 There you will find information on how syntax definitions are implemented and why scopes are named as they are.
 
-## Commits Guidelines
+## Guidelines
+
+### Commit Titles
 
 If there is an issue filed for what you contribute, please refer to it in the commit title like in this example:
 
@@ -11,25 +13,18 @@ If there is an issue filed for what you contribute, please refer to it in the co
 
 For more info, see the [GitHub documentation on Autolinked references and URLs].
 
-## Code Styles Conventions
+## Code Style Conventions
 
-This repository uses [EditorConfig] to enforce consistent code styles.
-If you haven't already done so, please install the [EditorConfig package for Sublime Text], which will ensure that project-specific settings will be enforced over custom settings while editing the repository contents.
+This repository uses [EditorConfig] to enforce consistent code style.
+If you have not already done so, then please install the [EditorConfig package for Sublime Text] which will ensure that project-specific settings will be enforced over custom settings while editing the repository contents.
 
 ## PureBasic IDE Settings
 
-Before editing the source files of the repository with the PureBasic IDE, you must ensure that the IDE doesn't save its settings at the end of the source files.
-
-In "__Preferences » Editor »  Save Settings to:__", there are four options to handle how compiler options are saved/loaded:
-
-1. __The end of the Source file__ — settings are saved as a comments block at the end of each source file.
-2. __The file &lt;filename&gt;.pb.cfg__ — for each source file, a corresponding `<filename>.pb.cfg` file is created. The file is a PureBASIC [Preference file].
-3. __A common file project.cfg for every directory__ — a single `project.cfg` [Preference file] is created within a folder, the settings of each source file are grouped in a [Preference Group] named as the source file.
-4. __Don't save anything__
-
-Check that your IDE is not configured to use the first option, otherwise you'll be modifying files tracked by Git, even if you don't actually change the file contents.
-Options two and three are fine because the repository is set to ignore any files matching the patterns `*.pb.cfg`, `*.pbi.cfg` and `project.cfg` — i.e. those files are excluded from the repository (see [`.gitignore`](.gitignore).
-
+In "__Preferences » Editor »  Save Settings to:__" there are four options on how compiler settings are saved and loaded.
+Check that your IDE is not configured to save compiler settings at the end of source files.
+With that setting the PureBasi IDE would modify files tracked by Git even though you did not actually change the source code.
+The other options to store compiler settings in dedicated files or not at all are acceptable.
+The possibly created compiler settings files are ignored in the repository based on their file extension and will not be committed.
 
 ## Completions
 
@@ -41,10 +36,17 @@ This eases maintenance. The one big completions file is a leftover from the pred
 As most as possible should be covered by syntax tests.
 You can read about them in [the Sublime Text documentation](https://www.sublimetext.com/docs/syntax.html#testing).
 
+If you add or modify PureBasic test code please verify its successful compilation in the PureBasic IDE.
+Code which should not compile on purpose is exempt from this.
+An example are syntax tests for invalid scopes.
+
+We would like to have this verification automated in the CI pipeline but [this currently is not possible].
 
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
+
+[this currently is not possible]: https://github.com/peterthomashorn/purebasic-language-for-sublime-text/issues/50#issuecomment-1019643693
 
 [Sublime Text documentation]: https://www.sublimetext.com/docs/index.html
 
