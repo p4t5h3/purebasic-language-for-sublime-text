@@ -1,4 +1,4 @@
-﻿;; SYNTAX TEST "Packages/Purebasic/Purebasic.sublime-syntax"
+﻿;; SYNTAX TEST "Packages/PureBasic/PureBasic.sublime-syntax"
 
 ; For info, see "Variables and Types":
 ; https://www.com/documentation/reference/variables.html
