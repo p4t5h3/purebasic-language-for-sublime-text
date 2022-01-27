@@ -1,26 +1,26 @@
-﻿; SYNTAX TEST "Packages/PureBasic/PureBasic.sublime-syntax"
+﻿;; SYNTAX TEST "Packages/PureBasic/PureBasic.sublime-syntax"
 
 EnableExplicit
 
 DeclareModule MyModule
-;             ^^^^^^^^ entity.name.namespace.purebasic
-; <- meta.namespace.purebasic
+;;            ^^^^^^^^ entity.name.namespace.purebasic
+;; <- meta.namespace.purebasic
     Declare MyMember()
 EndDeclareModule
-; <- meta.namespace.purebasic
-; <- keyword.other.purebasic
-;^^^^^^^^^^^^^^^ keyword.other.purebasic
+;; <- meta.namespace.purebasic
+;; <- keyword.other.purebasic
+;;^^^^^^^^^^^^^^ keyword.other.purebasic
 
 Module MyModule
-;      ^^^^^^^^ entity.name.namespace.purebasic
-; <- meta.namespace.purebasic
+;;     ^^^^^^^^ entity.name.namespace.purebasic
+;; <- meta.namespace.purebasic
     Procedure MyMember()
         Debug "Hello."
     EndProcedure
 EndModule
-; <- meta.namespace.purebasic
-; <- keyword.other.purebasic
-;^^^^^^^^ keyword.other.purebasic
+;; <- meta.namespace.purebasic
+;; <- keyword.other.purebasic
+;;^^^^^^^ keyword.other.purebasic
 
 MyModule::MyMember()
-;       ^^ punctuation.accessor.purebasic
+;;      ^^ punctuation.accessor.purebasic

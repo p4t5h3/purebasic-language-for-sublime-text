@@ -1,4 +1,4 @@
-﻿; SYNTAX TEST "Packages/PureBasic/PureBasic.sublime-syntax"
+﻿;; SYNTAX TEST "Packages/PureBasic/PureBasic.sublime-syntax"
 
 EnableExplicit
 
@@ -14,9 +14,9 @@ AddElement(Number())
 Number() = 30
 
 ForEach Number()
-; <- keyword.control.purebasic
-;^^^^^^ keyword.control.purebasic
+;; <- keyword.control.purebasic
+;;^^^^^ keyword.control.purebasic
     Debug Number()
 Next
-; <- keyword.control.purebasic
-;^^^ keyword.control.purebasic
+;; <- keyword.control.purebasic
+;;^^ keyword.control.purebasic

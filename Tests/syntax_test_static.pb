@@ -1,4 +1,4 @@
-﻿; SYNTAX TEST "Packages/PureBasic/PureBasic.sublime-syntax"
+﻿;; SYNTAX TEST "Packages/PureBasic/PureBasic.sublime-syntax"
 
 EnableExplicit
 
@@ -7,7 +7,7 @@ a = 10
 
 Procedure Change()
     Static a
-;   ^^^^^^ storage.modifier.purebasic
+;;  ^^^^^^ storage.modifier.purebasic
     a + 1
     Debug "In Procedure: " + Str(a) ; Will print 1, 2, 3 as the variable increments at each procedure call.
 EndProcedure
