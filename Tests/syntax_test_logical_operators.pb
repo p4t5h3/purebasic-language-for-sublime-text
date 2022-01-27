@@ -45,8 +45,8 @@ Define *Leftp = Left
 #RightC = #False
 
 If #RightC And *Left : Debug #True : EndIf
-;;             ^^^   variable.other
-;;             ^     punctuation.definition.variable
-;;         ^^^       keyword.operator.word
-;; ^^^^^^^           variable.other.constant
 ;; ^                 punctuation.definition.variable
+;; ^^^^^^^           variable.other.constant
+;;         ^^^       keyword.operator.word
+;;             ^     punctuation.definition.variable
+;;             ^^^^^ variable.other
