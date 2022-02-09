@@ -5049,13 +5049,13 @@
     },
     {
       "details" : "Resize the specified #Gadget3D at the given position and dimension",
-      "contents": "ResizeGadget3D(${1:#Gadget3D}, ${2:x}, ${3:y}, ${4:Width})$5",
+      "contents": "ResizeGadget3D(${1:#Gadget3D}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height})$0",
       "kind"    : "function",
       "trigger" : "ResizeGadget3D"
     },
     {
       "details" : "Resize the specified #Gadget at the given position and dimension",
-      "contents": "ResizeGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width})$5",
+      "contents": "ResizeGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height})$0",
       "kind"    : "function",
       "trigger" : "ResizeGadget"
     },
