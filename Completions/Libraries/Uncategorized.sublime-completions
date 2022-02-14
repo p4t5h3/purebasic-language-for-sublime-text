@@ -6939,13 +6939,13 @@
     },
     {
       "details" : "Change the gadget text content of the specified #Gadget3D",
-      "contents": "SetGadgetText3D(${1:#Gadget3D})$2",
+      "contents": "SetGadgetText3D(${1:#Gadget3D}, ${2:Text.s})$0",
       "kind"    : "function",
       "trigger" : "SetGadgetText3D"
     },
     {
       "details" : "Change the gadget text content of the specified #Gadget",
-      "contents": "SetGadgetText(${1:#Gadget})$2",
+      "contents": "SetGadgetText(${1:#Gadget}, ${2:Text.s})$0",
       "kind"    : "function",
       "trigger" : "SetGadgetText"
     },
