@@ -4275,7 +4275,7 @@
     },
     {
       "details" : "Creates a Text gadget in the current GadgetList",
-      "contents": "TextGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height})$6",
+      "contents": "TextGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height}, ${6:Text.s})$0",
       "kind"    : "function",
       "trigger" : "TextGadget"
     },
