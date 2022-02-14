@@ -8703,7 +8703,7 @@
     },
     {
       "details" : "Open the standard requester which allow to save a file",
-      "contents": "SaveFileRequester(${1:Title.s}, ${2:DefaultFile.s}, ${3:Pattern.s})$4",
+      "contents": "SaveFileRequester(${1:Title.s}, ${2:DefaultFile.s}, ${3:Pattern.s}, ${4:PatternPosition})$0",
       "kind"    : "function",
       "trigger" : "SaveFileRequester"
     },
