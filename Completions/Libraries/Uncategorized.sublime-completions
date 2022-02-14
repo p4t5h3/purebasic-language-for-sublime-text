@@ -609,7 +609,7 @@
     },
     {
       "details" : "Create a button gadget in the current GadgetList",
-      "contents": "ButtonGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height})$6",
+      "contents": "ButtonGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height}, ${6:Title.s})$0",
       "kind"    : "function",
       "trigger" : "ButtonGadget"
     },
