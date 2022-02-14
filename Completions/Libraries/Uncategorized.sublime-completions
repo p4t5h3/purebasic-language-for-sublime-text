@@ -4875,13 +4875,13 @@
     },
     {
       "details" : "Creates a String gadget in the current GadgetList",
-      "contents": "StringGadget3D(${1:#Gadget3D}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height})$6",
+      "contents": "StringGadget3D(${1:#Gadget3D}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height}, ${6:Content.s})$0",
       "kind"    : "function",
       "trigger" : "StringGadget3D"
     },
     {
       "details" : "Creates a String gadget in the current GadgetList",
-      "contents": "StringGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height})$6",
+      "contents": "StringGadget(${1:#Gadget}, ${2:x}, ${3:y}, ${4:Width}, ${5:Height}, ${6:Content.s})$0",
       "kind"    : "function",
       "trigger" : "StringGadget"
     },
