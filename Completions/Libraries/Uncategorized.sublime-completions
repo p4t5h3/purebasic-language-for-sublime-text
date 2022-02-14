@@ -8931,13 +8931,13 @@
     },
     {
       "details" : "Disable or enable a gadget",
-      "contents": "DisableGadget3D(${1:#Gadget3D})$2",
+      "contents": "DisableGadget3D(${1:#Gadget3D}, ${2:State})$0",
       "kind"    : "function",
       "trigger" : "DisableGadget3D"
     },
     {
       "details" : "Disable or enable a gadget",
-      "contents": "DisableGadget(${1:#Gadget})$2",
+      "contents": "DisableGadget(${1:#Gadget}, ${2:State})$0",
       "kind"    : "function",
       "trigger" : "DisableGadget"
     },
